@@ -199,4 +199,139 @@
             gap: 20px;
         }
 
-        @media (max-
+        /* PHẦN ĐỊNH DẠNG CHO CHÂN TRANG CHUYÊN NGHIỆP */
+        .site-footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 0.9rem;
+            border-top: 2px solid #b91c1c;
+            line-height: 1.5;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        .site-footer strong {
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .main-container { grid-template-columns: 1fr; }
+            .teacher-info-box { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header-banner">
+            <i class="fa-solid fa-desktop"></i>
+            <div class="header-text">
+                <h1>GÓC TIN HỌC SÁNG TẠO - CÔ HOÀNG MAI</h1>
+                <p>Trang thông tin học liệu cá nhân | Đơn vị công tác: Trường TH Diễn Liên</p>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a onclick="changeContent('trangchu')" id="btn-trangchu" class="active"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                <li><a onclick="changeContent('gioithieu')" id="btn-gioithieu">Giới thiệu</a></li>
+                <li><a onclick="changeContent('giaoan')" id="btn-giaoan">Giáo án giảng dạy</a></li>
+                <li><a onclick="changeContent('scratch')" id="btn-scratch">Dự án Scratch</a></li>
+                <li><a onclick="changeContent('tailieu')" id="btn-tailieu">Tài nguyên học tập</a></li>
+                <li><a onclick="changeContent('phuhuynh')" id="btn-phuhuynh">Góc phụ huynh</a></li>
+                <li><a onclick="changeContent('lienhe')" id="btn-lienhe">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-container">
+            <aside class="sidebar">
+                <div class="widget">
+                    <div class="widget-title">Học liệu Tin học</div>
+                    <ul class="widget-content">
+                        <li><a onclick="changeContent('giaoan')"><i class="fa-solid fa-angle-right"></i> Bài giảng khối 3, 4, 5</a></li>
+                        <li><a onclick="changeContent('scratch')"><i class="fa-solid fa-angle-right"></i> Kho sản phẩm Scratch</a></li>
+                        <li><a onclick="changeContent('tailieu')"><i class="fa-solid fa-angle-right"></i> Đề cương & Bài tập ôn tập</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <div class="widget-title">Liên kết ngành</div>
+                    <ul class="widget-content">
+                        <li><a href="https://csdl.moet.gov.vn" target="_blank"><i class="fa-solid fa-external-link"></i> CSDL Bộ Giáo dục</a></li>
+                        <li><a href="http://nghean.edu.vn" target="_blank"><i class="fa-solid fa-external-link"></i> Sở GD&ĐT Nghệ An</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="content-area">
+                <h3 class="content-title" id="content-main-title">CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH</h3>
+                
+                <div class="teacher-info-box" id="info-box-wrapper">
+                    <div class="info-text">
+                        <h2 id="teacher-name">Cô Hoàng Mai</h2>
+                        <p class="role" id="teacher-role">Giáo viên Tin học - Trường TH Diễn Liên</p>
+                        <div class="desc-box" id="page-text">
+                            Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.
+                        </div>
+                    </div>
+                    <div class="info-image-container">
+                        <img id="main-image" src="cb.jpg" alt="Giờ học Tin học Cô Hoàng Mai">
+                    </div>
+                </div>
+
+                <div class="kho-tai-lieu-container" id="khoTaiLieuContainer">
+                    <div class="documents-grid-custom" id="documentsGrid"></div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <p>© Bản quyền nội dung thuộc về <strong>Góc Tin Học Sáng Tạo</strong></p>
+            <p>Trang web được thiết kế và vận hành bởi <strong>Cô Hoàng Mai</strong> | Hotline liên hệ: <strong>0888.818.081</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        const data = {
+            trangchu: { mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.", image: "cb.jpg" },
+            gioithieu: { mainTitle: "GIỚI THIỆU GIÁO VIÊN PHU TRÁCH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Công tác chuyên môn tại trường Tiểu học Diễn Liên. Luôn nỗ lực đổi mới phương pháp dạy học, tích cực ứng dụng công nghệ thông tin nhằm giúp học sinh làm quen và làm chủ máy tính một cách sáng tạo.", image: "cb.jpg" },
+            giaoan: { mainTitle: "BÀI GIẢNG ĐIỆN TỬ KHỐI 3 - 4 - 5" },
+            scratch: { mainTitle: "LẬP TRÌNH KÉO THẢ SCRATCH SÁNG TẠO", name: "Sản phẩm tư duy toán học", role: "Học tập qua dự án", text: "Tổng hợp các bài tập thực hành, sản phẩm hoạt hình, trò chơi tương tác do cô thiết kế nhằm phát triển khả năng tư duy logic và giải quyết vấn đề cho các em học sinh.", image: "cb.jpg" },
+            tailieu: { mainTitle: "TÀI NGUYÊN VÀ ĐỀ CƯƠNG ÔN TẬP" },
+            phuhuynh: { mainTitle: "GÓC DÀNH CHO PHỤ HUYNH", name: "Phối hợp giáo dục", role: "Đồng hành cùng con công nghệ số", text: "Thông tin trao đổi giữa giáo viên bộ môn và phụ huynh về tình hình học tập phòng máy của học sinh, cẩm nang hướng dẫn phụ huynh quản lý con sử dụng Internet an toàn tại nhà.", image: "cb.jpg" },
+            lienhe: { mainTitle: "THÔNG TIN LIÊN HỆ CHUYÊN MÔN", name: "Hộp thư điện tử", role: "Kết nối giáo viên", text: "Mọi thông tin cần trao đổi, đóng góp ý kiến về chuyên môn môn Tin học hoặc phản ánh học tập, quý phụ huynh và đồng nghiệp vui lòng liên hệ trực tiếp qua Email nhà trường.", image: "cb.jpg" }
+        };
+
+        const DATA_JSON_DOCUMENTS = [
+            {
+                id: 1,
+                monHoc: "Giáo án",
+                ten: "Giáo án Tin học lớp 3 - Sách Kết nối tri thức (Cả năm)",
+                moTa: "Tài liệu giáo án chi tiết cả năm học bám sát khung chương trình mới dành cho giáo viên.",
+                ngayCapNhat: "2026-06-25",
+                urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
+                urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
+            },
+            {
+                id: 2,
+                monHoc: "Đề kiểm tra",
+                ten: "Đề kiểm tra định kỳ Học kỳ 1 - Tin học lớp 4",
+                moTa: "Gồm file ma trận, đề thi lý thuyết, thực hành và đáp án chấm chi tiết.",
+                ngayCapNhat: "2026-06-24",
+                urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
+                urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
+            }
+        ];
+
+        function changeContent(key) {
+            document.getElementById('content-main-title').innerText = data[key].mainTitle;
+            const infoBox = document.getElementById('info-box-wrapper');
+            const khoTaiLieu = document.getElementById('khoTaiLieuContainer');
+
+            if (key === 'giaoan' || key === 'tailieu') {
+                infoBox.style.display = 'none';
+                khoTaiLieu.style.display = 'block';
+                renderDocuments
