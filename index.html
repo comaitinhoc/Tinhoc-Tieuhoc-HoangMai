@@ -6,7 +6,14 @@
     <title>Cô Hoàng Mai - Giáo viên Tin học - Trường TH Diễn Liên</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- 
+    <style>
+        :root {
+            --primary-color: #166534;   /* Màu Xanh Lá đậm cho tên cô "Hoàng Thị Mai" */
+            --secondary-color: #dc2626; /* Màu Đỏ nổi bật cho tên "Trường TH Diễn Liên" */
+            --bg-light: #f8fafc;       
+            --text-dark: #166534;       
+            --text-light: #475569;      
+            --white: #ffffff;
         }
 
         * {
@@ -58,13 +65,13 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
+            color: #0f172a;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .nav-links a:hover, .nav-links a.active {
-            color: var(--secondary-color);
+            color: var(--primary-color);
         }
 
         .hero {
@@ -89,15 +96,15 @@
 
         .hero-content h2 {
             font-size: 1.6rem;
-            color: var(--secondary-color);
+            color: var(--primary-color);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
         .hero-content h3 {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            font-weight: 400;
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            font-weight: 600;
             margin-bottom: 1.5rem;
         }
 
@@ -114,23 +121,17 @@
         }
 
         .image-bg {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            border-radius: 41% 59% 41% 59% / 51% 42% 58% 49%;
-            padding: 10px;
-            animation: morph 8s ease-in-out infinite;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            padding: 8px;
         }
 
         .image-bg img {
-            width: 350px;
-            height: 350px;
+            width: 400px;
+            height: 400px;
             object-fit: cover;
-            border-radius: 41% 59% 41% 59% / 51% 42% 58% 49%;
-        }
-
-        @keyframes morph {
-            0% { border-radius: 41% 59% 41% 59% / 51% 42% 58% 49%; }
-            50% { border-radius: 55% 45% 55% 45% / 45% 55% 45% 55%; }
-            100% { border-radius: 41% 59% 41% 59% / 51% 42% 58% 49%; }
+            border-radius: 50%;
+            display: block;
         }
     </style>
 </head>
@@ -161,7 +162,7 @@
         </div>
         <div class="hero-image">
             <div class="image-bg">
-           <img src="https://i.ibb.co/60Zpdrb5/image-07b340.jpg" alt="Cô Hoàng Mai">
+                <img src="https://i.ibb.co/60Zpdrb5/image-07b340.jpg" alt="Cô Hoàng Mai">
             </div>
         </div>
     </main>
