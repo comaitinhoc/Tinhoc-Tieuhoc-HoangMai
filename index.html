@@ -14,7 +14,7 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        /* NỀN ĐỎ TOÀN TRANG SANG TRỌNG VÀ CHUYÊN NGHIỆP NHƯ CÔ YÊU CẦU */
+        /* NỀN ĐỎ TOÀN TRANG SANG TRỌNG VÀ CHUYÊN NGHIỆP */
         body {
             background-color: #b91c1c; 
             color: #ffffff;
@@ -74,7 +74,7 @@
             gap: 50px;
         }
 
-        /* KHỐI CHỮ BÊN TRÁI - CHỮ TRẮNG RÕ NÉT NỔI BẬT */
+        /* KHỐI CHỮ BÊN TRÁI - RÕ NÉT NỔI BẬT */
         .intro-text {
             flex: 1.2;
         }
@@ -88,7 +88,7 @@
 
         .intro-text .title-job {
             font-size: 1.5rem;
-            color: #fca5a5; /* Màu đỏ hồng nhạt cho chức vụ */
+            color: #fca5a5; 
             font-weight: 500;
             margin-bottom: 5px;
         }
@@ -109,7 +109,7 @@
             max-width: 600px;
         }
 
-        /* GIỮ NGUYÊN KHỐI ẢNH TRÒN VIỀN GRADIENT ĐÚNG PHOM GỐC CỦA CÔ */
+        /* KHỐI ẢNH TRÒN VIỀN GRADIENT ĐÚNG GIAO DIỆN GỐC */
         .intro-image-wrapper {
             flex: 0.8;
             display: flex;
@@ -122,7 +122,7 @@
             height: 380px;
             border-radius: 50%;
             padding: 6px; 
-            background: linear-gradient(135deg, #15803d, #ffffff); /* Viền gradient xanh - trắng nổi bật trên nền đỏ */
+            background: linear-gradient(135deg, #15803d, #ffffff); 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -139,7 +139,7 @@
             transition: opacity 0.3s ease;
         }
 
-        /* FOOTER TRÊN NỀN ĐỎ */
+        /* FOOTER NỀN ĐỎ SẪM */
         footer {
             margin-top: 100px;
             padding: 25px;
@@ -150,6 +150,56 @@
             color: #fca5a5;
         }
 
-        /* ĐÁP ỨNG GIAO DIỆN ĐIỆN THOẠI */
         @media (max-width: 768px) {
             header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                margin: 30px auto;
+            }
+            .intro-text h1 {
+                font-size: 2.8rem;
+            }
+            .profile-circle {
+                width: 290px;
+                height: 290px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-laptop-code"></i> Cô Hoàng Mai
+        </a>
+        <nav>
+            <ul>
+                <li><a onclick="changeContent('trangchu')" id="btn-trangchu" class="active">Trang chủ</a></li>
+                <li><a onclick="changeContent('gioithieu')" id="btn-gioithieu">Giới thiệu</a></li>
+                <li><a onclick="changeContent('giaoan')" id="btn-giaoan">Giáo án</a></li>
+                <li><a onclick="changeContent('scratch')" id="btn-scratch">Dự án Scratch</a></li>
+                <li><a onclick="changeContent('thuvien')" id="btn-thuvien">Thư viện ảnh</a></li>
+                <li><a onclick="changeContent('tailieu')" id="btn-tailieu">Tài liệu</a></li>
+                <li><a onclick="changeContent('lienhe')" id="btn-lienhe">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero-container">
+        
+        <div class="intro-text">
+            <h1 id="page-name">Cô Hoàng Mai</h1>
+            <div class="title-job" id="page-job">Giáo viên Tin học</div>
+            <div class="title-school">Trường TH Diễn Liên - Xã Quảng Châu - Nghệ An</div>
+            <p class="welcome-message" id="page-text">
+                Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến with không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.
+            </p>
+        </div>
+
+        <div class="intro-image-wrapper">
+            <div class="profile-circle">
+                <img id="main-image"
