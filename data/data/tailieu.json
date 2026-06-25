@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "ten": "Giáo án Tin học lớp 3 - Sách Kết nối tri thức (Cả năm)",
+    "monHoc": "Giáo án",
+    "moTa": "Tài liệu giáo án chi tiết cả năm học bám sát khung chương trình mới dành cho giáo viên.",
+    "ngayCapNhat": "2026-06-25",
+    "urlXem": "https://drive.google.com/file/d/1_xem_truc_tuyen_vi_du/view",
+    "urlTai": "https://drive.google.com/uc?export=download&id=1_tai_xuong_vi_du"
+  },
+  {
+    "id": 2,
+    "ten": "Đề kiểm tra định kỳ Học kỳ 1 - Tin học lớp 4",
+    "monHoc": "Đề kiểm tra",
+    "moTa": "Gồm file ma trận, đề thi lý thuyết, thực hành và đáp án chấm chi tiết.",
+    "ngayCapNhat": "2026-06-24",
+    "urlXem": "#",
+    "urlTai": "#"
+  },
+  {
+    "id": 3,
+    "ten": "Tài liệu tập huấn ứng dụng AI Scratch nâng cao cho Tiểu học",
+    "monHoc": "Tài liệu AI",
+    "moTa": "Sách hướng dẫn tích hợp các khối lệnh trí tuệ nhân tạo nhận diện hình ảnh trong Scratch.",
+    "ngayCapNhat": "2026-06-20",
+    "urlXem": "#",
+    "urlTai": "#"
+  }
+]
