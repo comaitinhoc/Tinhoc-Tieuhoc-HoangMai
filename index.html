@@ -139,6 +139,7 @@
             padding: 25px;
             border-radius: 4px;
             background-color: #ffffff;
+            min-height: 450px;
         }
 
         .content-title {
@@ -253,7 +254,7 @@
             border-radius: 2px;
         }
 
-        /* KHU VỰC HIỂN THỊ TÀI LIỆU */
+        /* KHU VỰC HIỂN THỊ KHO TÀI LIỆU */
         .kho-tai-lieu-container {
             display: none;
         }
@@ -301,7 +302,7 @@
             width: 100%;
         }
 
-        /* CHÂN TRANG ĐÃ SỬA CHUẨN: NHỎ BẰNG 1/3, 2 HÀNG THOÁNG, MÀU XÁM TRẮNG NHÃ NHẶN */
+        /* CHÂN TRANG: THU NHỎ 1/3, MÀU XÁM TRẮNG NHÃ NHẶN CHUẨN XỊN */
         .site-footer {
             background-color: #f8fafc; 
             color: #64748b; 
@@ -394,23 +395,4 @@
                             <span><i class="fas fa-filter"></i> Lọc danh mục:</span>
                             <select id="categoryFilter" class="filter-select" onchange="filterDocuments()">
                                 <option value="all">-- Tất cả mục --</option>
-                                <option value="Giáo án">Giáo án</option>
-                                <option value="Đề kiểm tra">Đề kiểm tra</option>
-                                <option value="Tài liệu AI">Tài liệu AI</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="documents-grid-custom" id="documentsGrid"></div>
-                </div>
-            </main>
-        </div>
-
-        <footer class="site-footer">
-            <p>© Bản quyền nội dung thuộc về <strong>Góc Tin Học Sáng Tạo - Cô Hoàng Mai</strong></p>
-            <p>Thiết kế bởi <strong>Cô Hoàng Mai</strong> | Hotline hỗ trợ: <strong>0888.818.081</strong></p>
-        </footer>
-    </div>
-
-    <script>
-        const data = {
-            trangchu: { mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không
+                                <option value="Giáo án">
