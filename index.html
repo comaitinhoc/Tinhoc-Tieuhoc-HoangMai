@@ -1,109 +1,277 @@
-
 <!DOCTYPE html>
-
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ho�ng Th? Mai - Gi�o vi�n Tin h?c Ti?u h?c</title>
-
-<style>
-body{
-font-family:Arial,sans-serif;
-margin:0;
-padding:0;
-background:#f5f7fa;
-}
-
-header{
-background:#0b5ed7;
-color:white;
-text-align:center;
-padding:40px;
-}
-
-nav{
-background:#084298;
-padding:10px;
-text-align:center;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-padding:10px 20px;
-display:inline-block;
-}
-
-section{
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-margin:20px 0;
-border-radius:10px;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-
-footer{
-background:#0b5ed7;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:20px;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cô Hoàng Mai - Giáo viên Tin h?c Ti?u h?c</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        header { background-color: rgba(255, 255, 255, 0.95); position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-weight: 700; font-size: 1.4rem; color: var(--primary-color); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: var(--transition); font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--secondary-color); }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-color); }
+        section { padding: 100px 0 60px 0; }
+        .section-title { text-align: center; margin-bottom: 40px; position: relative; color: var(--primary-color); font-size: 2rem; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--secondary-color); margin: 10px auto 0 auto; border-radius: 2px; }
+        #home { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 160px 0 100px 0; min-height: 80vh; display: flex; align-items: center; }
+        .hero-wrapper { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
+        .hero-text h1 { font-size: 2.8rem; color: var(--primary-color); margin-bottom: 15px; }
+        .hero-text h2 { font-size: 1.5rem; color: var(--secondary-color); margin-bottom: 20px; font-weight: 500; }
+        .hero-text p { color: var(--text-light); margin-bottom: 30px; font-size: 1.1rem; }
+        .btn { display: inline-block; padding: 12px 28px; background-color: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 30px; font-weight: 600; transition: var(--transition); border: none; cursor: pointer; }
+        .btn:hover { background-color: var(--secondary-color); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3); }
+        .hero-img { text-align: center; }
+        .hero-img img { width: 85%; max-width: 400px; border-radius: 50%; border: 8px solid var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about-content { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .feature-box { padding: 20px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-left: 4px solid var(--secondary-color); }
+        .feature-box i { font-size: 1.5rem; color: var(--secondary-color); margin-bottom: 10px; }
+        .tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+        .tab-btn { padding: 10px 25px; background-color: #e2e8f0; border: none; border-radius: 20px; font-weight: 600; cursor: pointer; transition: var(--transition); }
+        .tab-btn.active, .tab-btn:hover { background-color: var(--primary-color); color: var(--white); }
+        .tab-content { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .tab-content.active { display: grid; }
+        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: var(--transition); }
+        .card:hover { transform: translateY(-5px); }
+        .card-body { padding: 25px; }
+        .card-tag { display: inline-block; padding: 4px 12px; background: #dbeafe; color: var(--primary-color); border-radius: 12px; font-size: 0.8rem; font-weight: 600; margin-bottom: 15px; }
+        .card-title { font-size: 1.2rem; margin-bottom: 10px; color: var(--text-dark); }
+        .card-text { color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px; }
+        .scratch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .scratch-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .scratch-thumb { height: 180px; background: #1e293b; display: flex; align-items: center; justify-content: center; color: #f59e0b; font-size: 4rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .gallery-item { position: relative; border-radius: 12px; overflow: hidden; height: 200px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 15px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: var(--white); font-size: 0.9rem; }
+        .download-list { background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .download-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 10px; border-bottom: 1px solid #e2e8f0; }
+        .download-item:last-child { border-bottom: none; }
+        .file-info { display: flex; align-items: center; gap: 15px; }
+        .file-info i { font-size: 1.5rem; color: #ef4444; }
+        .file-name { font-weight: 500; }
+        .file-size { font-size: 0.8rem; color: var(--text-light); }
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-info h3 { margin-bottom: 20px; color: var(--primary-color); }
+        .contact-details { list-style: none; }
+        .contact-details li { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .contact-details i { font-size: 1.2rem; color: var(--secondary-color); width: 25px; }
+        .contact-form { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; transition: var(--transition); }
+        .form-control:focus { border-color: var(--secondary-color); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+        footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 30px 0; margin-top: 40px; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { position: absolute; top: 100%; left: -100%; width: 100%; height: calc(100vh - 70px); background: var(--white); flex-direction: column; align-items: center; padding-top: 50px; transition: var(--transition); box-shadow: 0 10px 15px rgba(0,0,0,0.05); }
+            .nav-links.active { left: 0; }
+            .hero-wrapper, .about-content, .contact-wrapper { grid-template-columns: 1fr; text-align: center; }
+            .hero-img { order: -1; }
+            .about-features { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 2rem; }
+            section { padding: 80px 0 40px 0; }
+        }
+    </style>
 </head>
 <body>
-
-<header>
-<h1>Ho�ng Th? Mai</h1>
-<h2>Gi�o vi�n Tin h?c Ti?u h?c</h2>
-</header>
-
-<nav>
-<a href="#gioithieu">Gi?i thi?u</a>
-<a href="#giaoan">Gi�o �n</a>
-<a href="#scratch">Scratch</a>
-<a href="#lienhe">Li�n h?</a>
-</nav>
-
-<section>
-
-<div class="card" id="gioithieu">
-<h2>Gi?i thi?u</h2>
-<p>Xin ch�o! T�i l� Ho�ng Th? Mai, gi�o vi�n Tin h?c Ti?u h?c.</p>
-</div>
-
-<div class="card" id="giaoan">
-<h2>Gi�o �n</h2>
-<ul>
-<li>Gi�o �n Tin h?c l?p 3</li>
-<li>Gi�o �n Tin h?c l?p 4</li>
-<li>Gi�o �n Tin h?c l?p 5</li>
-</ul>
-</div>
-
-<div class="card" id="scratch">
-<h2>D? �n Scratch</h2>
-<p>Noi chia s? c�c b�i h?c v� s?n ph?m Scratch c?a h?c sinh.</p>
-</div>
-
-<div class="card" id="lienhe">
-<h2>Li�n h?</h2>
-<p>Email: yourmail@gmail.com</p>
-</div>
-
-</section>
-
-<footer>
-� 2026 Ho�ng Th? Mai
-</footer>
-
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="logo"><i class="fa-solid fa-laptop-code"></i> Cô Hoàng Mai</a>
+            <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item active">Trang ch?</a></li>
+                <li><a href="#about" class="nav-item">Gi?i thi?u</a></li>
+                <li><a href="#lessons" class="nav-item">Giáo án</a></li>
+                <li><a href="#scratch" class="nav-item">D? án Scratch</a></li>
+                <li><a href="#gallery" class="nav-item">Thu vi?n ?nh</a></li>
+                <li><a href="#downloads" class="nav-item">Tài li?u</a></li>
+                <li><a href="#contact" class="nav-item">Liên h?</a></li>
+            </ul>
+        </div>
+    </header>
+    <section id="home">
+        <div class="container hero-wrapper">
+            <div class="hero-text">
+                <h1>Hoàng Th? Mai</h1>
+                <h2>Giáo viên Tin h?c Ti?u h?c</h2>
+                <p>Chào m?ng các th?y cô, b?c ph? huynh và các em h?c sinh d?n v?i không gian sáng t?o công ngh?. Noi uom m?m nh?ng k? nang tu duy máy tính d?u d?i cho th? h? tuong lai.</p>
+                <a href="#lessons" class="btn">Khám phá Giáo án</a>
+            </div>
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Cô Hoàng Th? Mai">
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Gi?i thi?u v? tôi</h2>
+            <div class="about-content">
+                <div>
+                    <p style="font-size: 1.1rem; color: var(--primary-color); font-weight: 600; margin-bottom: 15px;">"Công ngh? không thay th? du?c giáo viên, nhung công ngh? trong tay nh?ng giáo viên tuy?t v?i s? mang tính cách m?ng."</p>
+                    <p style="color: var(--text-light); margin-bottom: 15px;">Tôi là Hoàng Th? Mai, giáo viên b? môn Tin h?c c?p Ti?u h?c v?i hon 5 nam kinh nghi?m truy?n l?a dam mê công ngh? cho các em h?c sinh. Tôi luôn c? g?ng bi?n các ti?t h?c lý thuy?t khô khan thành nh?ng bu?i th?c hành d?y ?p ti?ng cu?i qua các trò choi tu duy logic.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-box">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h4>Phuong pháp Vui h?c</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">H?c l?p trình thông qua vi?c thi?t k? trò choi và k? chuy?n sáng t?o.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fa-solid fa-cubes"></i>
+                        <h4>Phát tri?n Tu duy</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">Rèn luy?n k? nang gi?i quy?t v?n d? và tu duy thu?t toán t? nh?.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="lessons" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">H? th?ng Giáo án</h2>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'lop3')">L?p 3</button>
+                <button class="tab-btn" onclick="openTab(event, 'lop4')">L?p 4</button>
+                <button class="tab-btn" onclick="openTab(event, 'lop5')">L?p 5</button>
+            </div>
+            <div id="lop3" class="tab-content active">
+                <div class="card"><div class="card-body"><span class="card-tag">Ch? d? A</span><h3 class="card-title">Bài 1: Làm quen v?i máy tính</h3><p class="card-text">Nh?n bi?t các b? ph?n co b?n c?a máy tính: Thân máy, màn hình, chu?t, bàn phím...</p><a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">T?i giáo án</a></div></div>
+                <div class="card"><div class="card-body"><span class="card-tag">Ch? d? E</span><h3 class="card-title">Bài 2: S? d?ng chu?t máy tính</h3><p class="card-text">Hu?ng d?n các thao tác nh?n chu?t trái, chu?t ph?i, nháy dúp và kéo th? chu?t.</p><a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">T?i giáo án</a></div></div>
+            </div>
+            <div id="lop4" class="tab-content">
+                <div class="card"><div class="card-body"><span class="card-tag">Ch? d? B</span><h3 class="card-title">Bài: Gõ phím b?ng 10 ngón</h3><p class="card-text">Luy?n t?p tu th? ng?i chu?n và quy trình d?t các ngón tay trên hàng phím co s?.</p><a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">T?i giáo án</a></div></div>
+                <div class="card"><div class="card-body"><span class="card-tag">Ch? d? F</span><h3 class="card-title">L?p trình Scratch co b?n</h3><p class="card-text">Làm quen v?i giao di?n kéo th? kh?i l?nh và di?u khi?n nhân v?t di chuy?n co b?n.</p><a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">T?i giáo án</a></div></div>
+            </div>
+            <div id="lop5" class="tab-content">
+                <div class="card"><div class="card-body"><span class="card-tag">Ch? d? C</span><h3 class="card-title">Bài: So?n th?o van b?n nâng cao</h3><p class="card-text">Chèn hình ?nh, t?o b?ng bi?u và can ch?nh l? do?n van b?n chuyên nghi?p.</p><a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">T?i giáo án</a></div></div>
+                <div class="card"><div class="card-body"><span class="card-tag">Ch? d? F</span><h3 class="card-title">Thi?t k? trò choi Mê Cung</h3><p class="card-text">S? d?ng các kh?i l?nh di?u ki?n (N?u... Thì) t?o trò choi mê cung k?ch tính trên Scratch.</p><a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">T?i giáo án</a></div></div>
+            </div>
+        </div>
+    </section>
+    <section id="scratch">
+        <div class="container">
+            <h2 class="section-title">D? án Scratch H?c sinh</h2>
+            <div class="scratch-grid">
+                <div class="scratch-card">
+                    <div class="scratch-thumb"><i class="fa-solid fa-gamepad"></i></div>
+                    <div class="card-body"><h3 class="card-title">Trò choi: H?ng Táo</h3><p class="card-text">S?n ph?m l?p trình xu?t s?c c?a nhóm h?c sinh l?p 4A ?ng d?ng bi?n s? tính di?m.</p><a href="https://scratch.mit.edu" target="_blank" class="btn" style="padding: 8px 20px; font-size: 0.9rem; background:#f59e0b;">Choi th? trên Scratch</a></div>
+                </div>
+                <div class="scratch-card">
+                    <div class="scratch-thumb" style="background:#1e3a8a; color:#3b82f6;"><i class="fa-solid fa-paint-brush"></i></div>
+                    <div class="card-body"><h3 class="card-title">Bé V? Hình Hình H?c</h3><p class="card-text">D? án s? d?ng công c? m? r?ng bút v? (Pen) d? t?o ra các hoa van toán h?c tuy?t d?p.</p><a href="https://scratch.mit.edu" target="_blank" class="btn" style="padding: 8px 20px; font-size: 0.9rem; background:#f59e0b;">Choi th? trên Scratch</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Thu vi?n ?nh ho?t d?ng</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=500" alt="Gi? h?c th?c hành"><div class="gallery-overlay">Gi? h?c th?c hành hang say phòng Máy 01</div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=500" alt="Hu?ng d?n h?c sinh"><div class="gallery-overlay">Cô hu?ng d?n t? m? t?ng thao tác chu?t</div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=500" alt="Thi l?p trình"><div class="gallery-overlay">H?c sinh t? tin tham gia H?i thi sáng t?o tin h?c</div></div>
+            </div>
+        </div>
+    </section>
+    <section id="downloads">
+        <div class="container">
+            <h2 class="section-title">Tài li?u T?i v?</h2>
+            <div class="download-list">
+                <div class="download-item">
+                    <div class="file-info"><i class="fa-solid fa-file-pdf"></i><div><div class="file-name">Ph?n m?m luy?n gõ 10 ngón - RapidTyping</div><div class="file-size">Dung lu?ng: 15 MB</div></div></div>
+                    <a href="#" class="btn" style="padding: 6px 15px; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> T?i</a>
+                </div>
+                <div class="download-item">
+                    <div class="file-info"><i class="fa-solid fa-file-word" style="color: #2b6cb0;"></i><div><div class="file-name">T?ng h?p bài t?p th?c hành Scratch co b?n</div><div class="file-size">Dung lu?ng: 4.2 MB</div></div></div>
+                    <a href="#" class="btn" style="padding: 6px 15px; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> T?i</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Liên h? v?i tôi</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Thông tin liên h?</h3>
+                    <p style="color: var(--text-light); margin-bottom: 25px;">Quý ph? huynh và các em h?c sinh có th?c m?c hay c?n h? tr? v? bài t?p Tin h?c, xin vui lòng liên h? qua các kênh du?i dây.</p>
+                    <ul class="contact-details">
+                        <li><i class="fa-solid fa-envelope"></i> hoangthimai.edu@gmail.com</li>
+                        <li><i class="fa-solid fa-phone"></i> 0912.345.xxx</li>
+                        <li><i class="fa-solid fa-school"></i> Tru?ng Ti?u h?c Bình Minh</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group"><label>H? và Tên</label><input type="text" class="form-control" placeholder="Nh?p h? và tên c?a b?n..." required></div>
+                        <div class="form-group"><label>Email / S? di?n tho?i</label><input type="text" class="form-control" placeholder="Ð? cô ti?n liên l?c l?i..." required></div>
+                        <div class="form-group"><label>L?i nh?n</label><textarea class="form-control" rows="4" placeholder="Nh?p n?i dung tin nh?n ho?c câu h?i..." required></textarea></div>
+                        <button type="submit" class="btn" style="width: 100%;">G?i tin nh?n</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer><div class="container"><p>&copy; 2026 Hoàng Th? Mai - Sáng t?o cùng Tin h?c Ti?u h?c. All rights reserved.</p></div></footer>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenu.querySelector('i');
+            icon.className = navLinks.classList.contains('active') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        });
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.querySelector('i').className = 'fa-solid fa-bars';
+            });
+        });
+        function openTab(evt, className) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            document.getElementById(className).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-item');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 150)) { current = section.getAttribute('id'); }
+            });
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current)) { item.classList.add('active'); }
+            });
+        });
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('C?m on b?n dã nh?n tin! L?i nh?n c?a b?n dã du?c g?i thành công d?n cô Hoàng Mai.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
