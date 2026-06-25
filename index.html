@@ -15,344 +15,200 @@
         }
 
         body {
-            background-color: #f4f6f9;
+            background-color: #ffffff;
             color: #333333;
             line-height: 1.6;
-            padding: 10px;
         }
 
-        /* KHUNG BAO TOÀN TRANG */
-        .page-wrapper {
-            max-width: 1140px;
-            margin: 0 auto;
+        /* NAVBAR TỐI GIẢN CHUẨN TRANG CÁ NHÂN */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
             background-color: #ffffff;
-            border: 1px solid #cccccc;
-            box-shadow: 0 0 8px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #f1f5f9;
         }
 
-        /* BANNER TRÊN CÙNG CHUẨN CÁ NHÂN */
-        .main-header {
-            padding: 20px;
+        .logo {
             display: flex;
             align-items: center;
-            border-bottom: 4px solid #b91c1c;
-            background: #ffffff;
-        }
-
-        .header-icon {
-            font-size: 45px;
-            color: #b91c1c;
-            margin-right: 15px;
-        }
-
-        .header-text h1 {
+            gap: 10px;
             font-size: 1.6rem;
-            color: #b91c1c;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .header-text h2 {
-            font-size: 1.05rem;
             color: #15803d;
-            font-weight: 500;
-            margin-top: 2px;
+            font-weight: 700;
+            text-decoration: none;
         }
 
-        /* MENU CHẠY NGANG MÀU ĐỎ ĐẬM CHUYÊN NGHIỆP NHƯ LÚC ĐẦU */
-        nav {
-            background-color: #b91c1c;
+        .logo i {
+            font-size: 1.4rem;
         }
 
-        .menu-list {
+        nav ul {
             display: flex;
             list-style: none;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-
-        .menu-list li a {
-            display: block;
-            padding: 12px 20px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            border-right: 1px solid rgba(255,255,255,0.1);
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .menu-list li a:hover, .menu-list li a.active {
-            background-color: #991b1b;
-        }
-
-        /* BỐ CỤC CHIA CỘT KHOA HỌC CHUẨN PORTAL */
-        .container {
-            display: flex;
-            min-height: 450px;
-        }
-
-        /* CỘT TRÁI - SIDEBAR NỀN ĐỎ CHỮ TRẮNG CHUYÊN NGHIỆP NHƯ LÚC ĐẦU */
-        .sidebar {
-            width: 260px;
-            background-color: #f8fafc;
-            border-right: 1px solid #dddddd;
-            padding: 15px 10px;
-        }
-
-        .widget {
-            border: 1px solid #b91c1c;
-            background: #ffffff;
-            margin-bottom: 15px;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .widget-title {
-            background-color: #b91c1c; /* Nền đỏ */
-            color: #ffffff; /* Chữ trắng */
-            padding: 10px 12px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .widget-body ul {
-            list-style: none;
-        }
-
-        .widget-body ul li a {
-            display: block;
-            padding: 10px 12px;
-            color: #333333;
-            text-decoration: none;
-            font-size: 0.85rem;
-            border-bottom: 1px solid #f1f5f9;
-            transition: all 0.2s;
-        }
-
-        .widget-body ul li a:hover {
-            background-color: #fef2f2;
-            color: #b91c1c;
-            padding-left: 16px;
-        }
-
-        /* CỘT PHẢI - NỘI DUNG CHÍNH CỦA CÔ MAI */
-        .main-content {
-            flex: 1;
-            padding: 25px;
-            background: #ffffff;
-        }
-
-        .content-title {
-            font-size: 1.3rem;
-            color: #b91c1c;
-            font-weight: bold;
-            border-bottom: 2px solid #b91c1c;
-            padding-bottom: 6px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .intro-block {
-            display: flex;
             gap: 25px;
-            align-items: flex-start;
         }
 
-        .text-area {
+        nav ul li a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #15803d;
+        }
+
+        /* KHU VỰC HERO CHÍNH TRẢI ĐỀU TINH TẾ */
+        .hero-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        /* KHỐI CHỮ BÊN TRÁI */
+        .intro-text {
             flex: 1.2;
         }
 
-        .t-name {
-            font-size: 2rem;
+        .intro-text h1 {
+            font-size: 3.2rem;
             color: #15803d;
-            font-weight: bold;
-            margin-bottom: 4px;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        .t-role {
+        .intro-text .title-job {
+            font-size: 1.4rem;
+            color: #334155;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .intro-text .title-school {
+            font-size: 1.15rem;
+            color: #b91c1c;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .intro-text .welcome-message {
             font-size: 1.1rem;
-            font-weight: bold;
-            color: #475569;
-            margin-bottom: 15px;
-        }
-
-        /* ĐOẠN VĂN CHÀO MỪNG XANH LÁ ĐẬM RÕ NÉT */
-        .welcome-para {
-            color: #15803d !important;
-            font-size: 1.05rem;
-            font-weight: bold;
+            color: #15803d;
+            font-weight: 500;
             text-align: justify;
-            background-color: #f0fdf4;
-            padding: 15px;
-            border: 1px dashed #15803d;
-            border-radius: 4px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* KHUNG CHỨA ẢNH VUÔNG NÉT CĂNG CHỐNG LỖI */
-        .image-area {
+        /* KHỐI ẢNH TRÒN VIỀN GRADIENT ĐÚNG GIAO DIỆN GỐC */
+        .intro-image-wrapper {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-circle {
             width: 360px;
-            border: 1px solid #cccccc;
-            padding: 5px;
-            background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            height: 360px;
+            border-radius: 50%;
+            padding: 6px; /* Khoảng cách tạo viền bóng */
+            background: linear-gradient(135deg, #15803d, #b91c1c); /* Viền màu xanh-đỏ như hình gốc */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .image-area img {
+        .profile-circle img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background-color: #ffffff;
             display: block;
-            transition: opacity 0.3s ease;
         }
 
-        /* CHÂN TRANG */
+        /* FOOTER ĐƠN GIẢN */
         footer {
-            background-color: #b91c1c;
-            color: #ffffff;
-            padding: 15px;
-            font-size: 0.85rem;
+            margin-top: 100px;
+            padding: 20px;
             text-align: center;
-            border-top: 1px solid #991b1b;
+            background-color: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* TƯƠNG THÍCH ĐIỆN THOẠI */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                margin: 30px auto;
+            }
+            .intro-text h1 {
+                font-size: 2.5rem;
+            }
+            .profile-circle {
+                width: 280px;
+                height: 280px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-wrapper">
-        
-        <div class="main-header">
-            <div class="header-icon"><i class="fa-solid fa-laptop-code"></i></div>
-            <div class="header-text">
-                <h1>Góc Tin Học Sáng Tạo - Cô Hoàng Mai</h1>
-                <h2>Trang thông tin cá nhân | Đơn vị: Trường TH Diễn Liên</h2>
-            </div>
-        </div>
-
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-laptop-code"></i> Cô Hoàng Mai
+        </a>
         <nav>
-            <ul class="menu-list">
-                <li><a onclick="changeContent('trangchu')" id="btn-trangchu" class="active">Trang chủ</a></li>
-                <li><a onclick="changeContent('gioithieu')" id="btn-gioithieu">Giới thiệu</a></li>
-                <li><a onclick="changeContent('giaoan')" id="btn-giaoan">Giáo án</a></li>
-                <li><a onclick="changeContent('scratch')" id="btn-scratch">Dự án Scratch</a></li>
-                <li><a onclick="changeContent('thuvien')" id="btn-thuvien">Thư viện ảnh</a></li>
-                <li><a onclick="changeContent('tailieu')" id="btn-tailieu">Tài liệu</a></li>
-                <li><a onclick="changeContent('lienhe')" id="btn-lienhe">Liên hệ</a></li>
+            <ul>
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Giáo án</a></li>
+                <li><a href="#">Dự án Scratch</a></li>
+                <li><a href="#">Thư viện ảnh</a></li>
+                <li><a href="#">Tài liệu</a></li>
+                <li><a href="#">Liên hệ</a></li>
             </ul>
         </nav>
+    </header>
 
-        <div class="container">
-            
-            <div class="sidebar">
-                <div class="widget">
-                    <div class="widget-title"><i class="fa-solid fa-book"></i> Học liệu cá nhân</div>
-                    <div class="widget-body">
-                        <ul>
-                            <li><a onclick="changeContent('giaoan')"><i class="fa-solid fa-chevron-right"></i> Bài giảng khối 3, 4, 5</a></li>
-                            <li><a onclick="changeContent('scratch')"><i class="fa-solid fa-chevron-right"></i> Kho học liệu Scratch</a></li>
-                            <li><a onclick="changeContent('tailieu')"><i class="fa-solid fa-chevron-right"></i> Đề cương & Bài tập</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="widget">
-                    <div class="widget-title"><i class="fa-solid fa-link"></i> Liên kết ngành</div>
-                    <div class="widget-body">
-                        <ul>
-                            <li><a href="https://csdl.moet.gov.vn" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> CSDL Bộ Giáo dục</a></li>
-                            <li><a href="https://nghean.edu.vn" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Sở GD&ĐT Nghệ An</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-content">
-                <div class="content-title" id="page-heading">GIỚI THIỆU GIÁO VIÊN PHU TRÁCH</div>
-                
-                <div class="intro-block">
-                    <div class="text-area">
-                        <div class="t-name">Cô Hoàng Mai</div>
-                        <div class="t-role">Giáo viên Tin học - Trường TH Diễn Liên</div>
-                        <p class="welcome-para" id="page-text">
-                            Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.
-                        </p>
-                    </div>
-
-                    <div class="image-area">
-                        <img id="main-image" src="https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg" alt="Ảnh minh họa">
-                    </div>
-                </div>
-            </div>
-
+    <div class="hero-container">
+        
+        <div class="intro-text">
+            <h1>Cô Hoàng Mai</h1>
+            <div class="title-job">Giáo viên Tin học</div>
+            <div class="title-school">Trường TH Diễn Liên - Xã Quảng Châu - Nghệ An</div>
+            <p class="welcome-message">
+                Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.
+            </p>
         </div>
 
-        <footer>
-            <p>© Góc học tập Tin học Tiểu học - Giáo viên Hoàng Mai - Trường TH Diễn Liên</p>
-        </footer>
+        <div class="intro-image-wrapper">
+            <div class="profile-circle">
+                <img src="https://images2.imgbox.com/71/6a/NfU9D96m_o.png" alt="Cô Hoàng Mai">
+            </div>
+        </div>
 
     </div>
 
-    <script>
-        const data = {
-            trangchu: {
-                heading: "GIỚI THIỆU GIÁO VIÊN PHỤ TRÁCH",
-                text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.",
-                image: "https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg" // Ảnh lớp học 1
-            },
-            gioithieu: {
-                heading: "TIỂU SỬ & QUÁ TRÌNH CÔNG TÁC",
-                text: "Cô Hoàng Mai - Giáo viên phụ trách môn Tin học tại Trường Tiểu học Diễn Liên. Luôn nỗ lực đổi mới phương pháp dạy học, ứng dụng CNTT hiệu quả vào từng bài giảng.",
-                image: "https://images2.imgbox.com/71/6a/NfU9D96m_o.png" // Ảnh chân dung mẫu sắc nét
-            },
-            giaoan: {
-                heading: "KHO BÀI GIẢNG & GIÁO ÁN ĐIỆN TỬ",
-                text: "Hệ thống giáo án Tin học định hướng phát triển năng lực số cho học sinh tiểu học theo chương trình GDPT mới. Đầy đủ các khối lớp 3, 4, 5.",
-                image: "https://images2.imgbox.com/60/7a/mC73POfM_o.jpg" // Ảnh minh họa kho sách/bài giảng
-            },
-            scratch: {
-                heading: "DỰ ÁN LẬP TRÌNH SCRATCH SÁNG TẠO",
-                text: "Nơi tổng hợp các sản phẩm lập trình trực quan Scratch do cô thiết kế và các dự án xuất sắc của học sinh trường Tiểu học Diễn Liên.",
-                image: "https://images2.imgbox.com/c6/33/M9y0vT6Y_o.jpg" // Ảnh minh họa giao diện Scratch
-            },
-            thuvien: {
-                heading: "THƯ VIỆN ẢNH HOẠT ĐỘNG LỚP HỌC",
-                text: "Khoảnh khắc ghi lại các giờ học Tin học sôi nổi, các cuộc thi Tin học trẻ và hoạt động công nghệ trải nghiệm của học sinh.",
-                image: "https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg" // Ảnh hoạt động
-            },
-            tailieu: {
-                heading: "TÀI LIỆU VÀ ĐỀ CƯƠNG ÔN TẬP",
-                text: "Tải về các phiếu bài tập, hướng dẫn thực hành máy tính và tài liệu bổ trợ kiến thức Tin học cho học sinh tại nhà.",
-                image: "https://images2.imgbox.com/60/7a/mC73POfM_o.jpg"
-            },
-            lienhe: {
-                heading: "THÔNG TIN LIÊN HỆ TRỰC TUYẾN",
-                text: "Mọi đóng góp, trao đổi chuyên môn hoặc thắc mắc của phụ huynh xin vui lòng gửi về hòm thư điện tử: cohoangmai.dienlien@gmail.com.",
-                image: "https://images2.imgbox.com/71/6a/NfU9D96m_o.png"
-            }
-        };
+    <footer>
+        <p>© Bản quyền thuộc về Góc học tập Tin học - Cô Hoàng Mai</p>
+    </footer>
 
-        function changeContent(key) {
-            // Cập nhật chữ nội dung
-            document.getElementById('page-heading').innerText = data[key].heading;
-            document.getElementById('page-text').innerText = data[key].text;
-            
-            // Cập nhật ảnh nét tương ứng
-            const imgElement = document.getElementById('main-image');
-            imgElement.style.opacity = 0;
-            setTimeout(() => {
-                imgElement.src = data[key].image;
-                imgElement.style.opacity = 1;
-            }, 200);
-
-            // Đổi trạng thái active trên thanh menu màu đỏ
-            document.querySelectorAll('.menu-list li a').forEach(el => el.classList.remove('active'));
-            const activeBtn = document.getElementById(`btn-${key}`);
-            if(activeBtn) activeBtn.classList.add('active');
-        }
-    </script>
 </body>
 </html>
