@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GÓC TIN HỌC SÁNG TẠO - CÔ HOÀNG MAI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght=400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -437,14 +437,11 @@
                                 <option value="Giáo án">Giáo án</option>
                                 <option value="Đề kiểm tra">Đề kiểm tra</option>
                                 <option value="Tài liệu AI">Tài liệu AI</option>
-                                <option value="Tài liệu tập huấn">Tài liệu tập huấn</option>
                             </select>
                         </div>
                     </div>
                     
-                    <div class="documents-grid-custom" id="documentsGrid">
-                        <div class="status-text-custom">Đang tải học liệu hệ thống...</div>
-                    </div>
+                    <div class="documents-grid-custom" id="documentsGrid"></div>
                 </div>
             </main>
         </div>
@@ -452,62 +449,39 @@
 
     <script>
         const data = {
-            trangchu: {
-                mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH",
-                name: "Cô Hoàng Mai",
-                role: "Giáo viên Tin học - Trường TH Diễn Liên",
-                text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.",
-                image: "cb.jpg"
-            },
-            gioithieu: {
-                mainTitle: "GIỚI THIỆU GIÁO VIÊN PHU TRÁCH",
-                name: "Cô Hoàng Mai",
-                role: "Giáo viên Tin học - Trường TH Diễn Liên",
-                text: "Công tác chuyên môn tại trường Tiểu học Diễn Liên. Luôn nỗ lực đổi mới phương pháp dạy học, tích cực ứng dụng công nghệ thông tin nhằm giúp học sinh làm quen và làm chủ máy tính một cách sáng tạo.",
-                image: "cb.jpg"
-            },
-            giaoan: {
-                mainTitle: "BÀI GIẢNG ĐIỆN TỬ KHỐI 3 - 4 - 5",
-                name: "Kho học liệu số",
-                role: "Hệ thống bài giảng theo chương trình mới",
-                text: "Hệ thống bài giảng điện tử PowerPoint, phiếu học tập và tài liệu hướng dẫn thực hành máy tính bám sát khung chương trình giáo dục phổ thông mới môn Tin học tiểu học.",
-                image: "cb.jpg"
-            },
-            scratch: {
-                mainTitle: "LẬP TRÌNH KÉO THẢ SCRATCH SÁNG TẠO",
-                name: "Sản phẩm tư duy toán học",
-                role: "Học tập qua dự án",
-                text: "Tổng hợp các bài tập thực hành, sản phẩm hoạt hình, trò chơi tương tác do cô thiết kế nhằm phát triển khả năng tư duy logic và giải quyết vấn đề cho các em học sinh.",
-                image: "cb.jpg"
-            },
-            tailieu: {
-                mainTitle: "TÀI NGUYÊN VÀ ĐỀ CƯƠNG ÔN TẬP",
-                name: "Tài liệu học tập bổ trợ",
-                role: "Học sinh tự học tại nhà",
-                text: "Nơi cung cấp các bộ câu hỏi ôn tập trắc nghiệm kiến thức lý thuyết, bài tập rèn luyện kỹ năng gõ 10 ngón chuẩn giúp các em củng cố bài học ngoài giờ lên lớp.",
-                image: "cb.jpg"
-            },
-            phuhuynh: {
-                mainTitle: "GÓC DÀNH CHO PHỤ HUYNH",
-                name: "Phối hợp giáo dục",
-                role: "Đồng hành cùng con công nghệ số",
-                text: "Thông tin trao đổi giữa giáo viên bộ môn và phụ huynh về tình hình học tập phòng máy của học sinh, cẩm nang hướng dẫn phụ huynh quản lý con sử dụng Internet an toàn tại nhà.",
-                image: "cb.jpg"
-            },
-            lienhe: {
-                mainTitle: "THÔNG TIN LIÊN HỆ CHUYÊN MÔN",
-                name: "Hộp thư điện tử",
-                role: "Kết nối giáo viên",
-                text: "Mọi thông tin cần trao đổi, đóng góp ý kiến về chuyên môn môn Tin học hoặc phản ánh học tập, quý phụ huynh và đồng nghiệp vui lòng liên hệ trực tiếp qua Email nhà trường.",
-                image: "cb.jpg"
-            }
+            trangchu: { mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.", image: "cb.jpg" },
+            gioithieu: { mainTitle: "GIỚI THIỆU GIÁO VIÊN PHU TRÁCH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Công tác chuyên môn tại trường Tiểu học Diễn Liên. Luôn nỗ lực đổi mới phương pháp dạy học, tích cực ứng dụng công nghệ thông tin nhằm giúp học sinh làm quen và làm chủ máy tính một cách sáng tạo.", image: "cb.jpg" },
+            giaoan: { mainTitle: "BÀI GIẢNG ĐIỆN TỬ KHỐI 3 - 4 - 5" },
+            scratch: { mainTitle: "LẬP TRÌNH KÉO THẢ SCRATCH SÁNG TẠO", name: "Sản phẩm tư duy toán học", role: "Học tập qua dự án", text: "Tổng hợp các bài tập thực hành, sản phẩm hoạt hình, trò chơi tương tác do cô thiết kế nhằm phát triển khả năng tư duy logic và giải quyết vấn đề cho các em học sinh.", image: "cb.jpg" },
+            tailieu: { mainTitle: "TÀI NGUYÊN VÀ ĐỀ CƯƠNG ÔN TẬP" },
+            phuhuynh: { mainTitle: "GÓC DÀNH CHO PHỤ HUYNH", name: "Phối hợp giáo dục", role: "Đồng hành cùng con công nghệ số", text: "Thông tin trao đổi giữa giáo viên bộ môn và phụ huynh về tình hình học tập phòng máy của học sinh, cẩm nang hướng dẫn phụ huynh quản lý con sử dụng Internet an toàn tại nhà.", image: "cb.jpg" },
+            lienhe: { mainTitle: "THÔNG TIN LIÊN HỆ CHUYÊN MÔN", name: "Hộp thư điện tử", role: "Kết nối giáo viên", text: "Mọi thông tin cần trao đổi, đóng góp ý kiến về chuyên môn môn Tin học hoặc phản ánh học tập, quý phụ huynh và đồng nghiệp vui lòng liên hệ trực tiếp qua Email nhà trường.", image: "cb.jpg" }
         };
 
-        let DATA_JSON_DOCUMENTS = [];
+        // ĐƯỜNG LINK GOOGLE DRIVE CỦA CÔ ĐÃ ĐƯỢC TÍCH HỢP TRỰC TIẾP VÀO ĐÂY AN TOÀN 100%
+        const DATA_JSON_DOCUMENTS = [
+            {
+                id: 1,
+                ten: "Giáo án Tin học lớp 3 - Sách Kết nối tri thức (Cả năm)",
+                monHoc: "Giáo án",
+                moTa: "Tài liệu giáo án chi tiết cả năm học bám sát khung chương trình mới dành cho giáo viên.",
+                ngayCapNhat: "2026-06-25",
+                urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
+                urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
+            },
+            {
+                id: 2,
+                ten: "Đề kiểm tra định kỳ Học kỳ 1 - Tin học lớp 4",
+                monHoc: "Đề kiểm tra",
+                moTa: "Gồm file ma trận, đề thi lý thuyết, thực hành và đáp án chấm chi tiết.",
+                ngayCapNhat: "2026-06-24",
+                urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
+                urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
+            }
+        ];
 
         function changeContent(key) {
             document.getElementById('content-main-title').innerText = data[key].mainTitle;
-            
             const infoBox = document.getElementById('info-box-wrapper');
             const khoTaiLieu = document.getElementById('khoTaiLieuContainer');
             const selectFilter = document.getElementById('categoryFilter');
@@ -515,17 +489,11 @@
             if (key === 'giaoan' || key === 'tailieu') {
                 infoBox.style.display = 'none';
                 khoTaiLieu.style.display = 'block';
-                
-                if (key === 'giaoan') {
-                    selectFilter.value = 'Giáo án';
-                } else {
-                    selectFilter.value = 'all';
-                }
+                selectFilter.value = (key === 'giaoan') ? 'Giáo án' : 'all';
                 filterDocuments();
             } else {
                 infoBox.style.display = 'grid';
                 khoTaiLieu.style.display = 'none';
-                
                 document.getElementById('teacher-name').innerText = data[key].name;
                 document.getElementById('teacher-role').innerText = data[key].role;
                 document.getElementById('page-text').innerText = data[key].text;
@@ -538,48 +506,29 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            fetchJsonData();
+            filterDocuments();
             document.getElementById('searchInput').addEventListener('input', filterDocuments);
             document.getElementById('categoryFilter').addEventListener('change', filterDocuments);
         });
 
-        async function fetchJsonData() {
-            try {
-                const response = await fetch('data/tailieu.json');
-                if (!response.ok) throw new Error('Không thể đọc file JSON');
-                DATA_JSON_DOCUMENTS = await response.json();
-                filterDocuments();
-            } catch (error) {
-                console.error(error);
-                document.getElementById('documentsGrid').innerHTML = `
-                    <div class="status-text-custom">Chưa có tệp dữ liệu /data/tailieu.json hoặc cấu trúc trống.</div>
-                `;
-            }
-        }
-
         function renderDocuments(docs) {
             const grid = document.getElementById('documentsGrid');
             grid.innerHTML = '';
-
             if (docs.length === 0) {
                 grid.innerHTML = '<div class="status-text-custom">Không tìm thấy tài liệu phù hợp.</div>';
                 return;
             }
-
             docs.forEach(doc => {
-                const dateObj = new Date(doc.ngayCapNhat);
-                const formattedDate = isNaN(dateObj) ? doc.ngayCapNhat : dateObj.toLocaleDateString('vi-VN');
-
                 const card = document.createElement('div');
                 card.className = 'doc-card-custom';
                 card.innerHTML = `
                     <span class="doc-tag-custom">${doc.monHoc}</span>
                     <h4 class="doc-title-custom">${doc.ten}</h4>
                     <p class="doc-desc-custom">${doc.moTa}</p>
-                    <div class="doc-date-custom"><i class="far fa-calendar-alt"></i> Cập nhật: ${formattedDate}</div>
+                    <div class="doc-date-custom"><i class="far fa-calendar-alt"></i> Cập nhật: ${doc.ngayCapNhat}</div>
                     <div class="doc-actions-custom">
                         <a href="${doc.urlXem}" target="_blank" class="btn-custom btn-view-custom"><i class="fas fa-eye"></i> Xem liền</a>
-                        <a href="${doc.urlTai}" download class="btn-custom btn-download-custom"><i class="fas fa-download"></i> Tải về</a>
+                        <a href="${doc.urlTai}" target="_blank" class="btn-custom btn-download-custom"><i class="fas fa-download"></i> Tải về</a>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -594,10 +543,8 @@
                 const matchesCategory = (selectedCategory === 'all' || doc.monHoc === selectedCategory);
                 const cleanName = removeVietnameseTones(doc.ten.toLowerCase());
                 const cleanDesc = removeVietnameseTones(doc.moTa.toLowerCase());
-                const matchesKeyword = cleanName.includes(keyword) || cleanDesc.includes(keyword);
-                return matchesCategory && matchesKeyword;
+                return matchesCategory && (cleanName.includes(keyword) || cleanDesc.includes(keyword));
             });
-
             renderDocuments(filtered);
         }
 
@@ -605,7 +552,7 @@
             str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a");
             str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e");
             str = str.replace(/ì|í|ị|ỉ|ĩ/g,"i");
-            str = str.replace(/ò|á|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o");
+            str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o");
             str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u");
             str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y");
             str = str.replace(/đ/g,"d");
