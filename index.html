@@ -188,9 +188,8 @@
             object-fit: cover;
         }
 
-        /* --- PHẦN CSS BỔ SUNG CHO BỘ LỌC TÀI LIỆU (TÔNG ĐỎ ĐÔ) --- */
         .kho-tai-lieu-container {
-            display: none; /* Mặc định ẩn, chỉ hiện khi chọn đúng tab */
+            display: none;
             margin-top: 15px;
         }
 
@@ -418,7 +417,7 @@
                         </div>
                     </div>
                     <div class="info-image-container">
-                        <img id="main-image" src="https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg" alt="Giờ học Tin học Cô Hoàng Mai">
+                        <img id="main-image" src="cb.jpg" alt="Giờ học Tin học Cô Hoàng Mai">
                     </div>
                 </div>
 
@@ -452,66 +451,63 @@
     </div>
 
     <script>
-        // Giữ nguyên vẹn cơ sở dữ liệu bài viết tĩnh của cô
         const data = {
             trangchu: {
                 mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH",
                 name: "Cô Hoàng Mai",
                 role: "Giáo viên Tin học - Trường TH Diễn Liên",
                 text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.",
-                image: "https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg"
+                image: "cb.jpg"
             },
             gioithieu: {
                 mainTitle: "GIỚI THIỆU GIÁO VIÊN PHU TRÁCH",
                 name: "Cô Hoàng Mai",
                 role: "Giáo viên Tin học - Trường TH Diễn Liên",
                 text: "Công tác chuyên môn tại trường Tiểu học Diễn Liên. Luôn nỗ lực đổi mới phương pháp dạy học, tích cực ứng dụng công nghệ thông tin nhằm giúp học sinh làm quen và làm chủ máy tính một cách sáng tạo.",
-                image: "https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg"
+                image: "cb.jpg"
             },
             giaoan: {
                 mainTitle: "BÀI GIẢNG ĐIỆN TỬ KHỐI 3 - 4 - 5",
                 name: "Kho học liệu số",
                 role: "Hệ thống bài giảng theo chương trình mới",
                 text: "Hệ thống bài giảng điện tử PowerPoint, phiếu học tập và tài liệu hướng dẫn thực hành máy tính bám sát khung chương trình giáo dục phổ thông mới môn Tin học tiểu học.",
-                image: "https://images2.imgbox.com/60/7a/mC73POfM_o.jpg"
+                image: "cb.jpg"
             },
             scratch: {
                 mainTitle: "LẬP TRÌNH KÉO THẢ SCRATCH SÁNG TẠO",
                 name: "Sản phẩm tư duy toán học",
                 role: "Học tập qua dự án",
                 text: "Tổng hợp các bài tập thực hành, sản phẩm hoạt hình, trò chơi tương tác do cô thiết kế nhằm phát triển khả năng tư duy logic và giải quyết vấn đề cho các em học sinh.",
-                image: "https://images2.imgbox.com/c6/33/M9y0vT6Y_o.jpg"
+                image: "cb.jpg"
             },
             tailieu: {
                 mainTitle: "TÀI NGUYÊN VÀ ĐỀ CƯƠNG ÔN TẬP",
                 name: "Tài liệu học tập bổ trợ",
                 role: "Học sinh tự học tại nhà",
                 text: "Nơi cung cấp các bộ câu hỏi ôn tập trắc nghiệm kiến thức lý thuyết, bài tập rèn luyện kỹ năng gõ 10 ngón chuẩn giúp các em củng cố bài học ngoài giờ lên lớp.",
-                image: "https://images2.imgbox.com/60/7a/mC73POfM_o.jpg"
+                image: "cb.jpg"
             },
             phuhuynh: {
                 mainTitle: "GÓC DÀNH CHO PHỤ HUYNH",
                 name: "Phối hợp giáo dục",
                 role: "Đồng hành cùng con công nghệ số",
                 text: "Thông tin trao đổi giữa giáo viên bộ môn và phụ huynh về tình hình học tập phòng máy của học sinh, cẩm nang hướng dẫn phụ huynh quản lý con sử dụng Internet an toàn tại nhà.",
-                image: "https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg"
+                image: "cb.jpg"
             },
             lienhe: {
                 mainTitle: "THÔNG TIN LIÊN HỆ CHUYÊN MÔN",
                 name: "Hộp thư điện tử",
                 role: "Kết nối giáo viên",
                 text: "Mọi thông tin cần trao đổi, đóng góp ý kiến về chuyên môn môn Tin học hoặc phản ánh học tập, quý phụ huynh và đồng nghiệp vui lòng liên hệ trực tiếp qua Email nhà trường.",
-                image: "https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg"
+                image: "cb.jpg"
             }
         };
 
-        let DATA_JSON_DOCUMENTS = []; // Biến chứa dữ liệu tải từ JSON
+        let DATA_JSON_DOCUMENTS = [];
 
         function changeContent(key) {
-            // Thay đổi tiêu đề
             document.getElementById('content-main-title').innerText = data[key].mainTitle;
             
-            // Xử lý ẩn/hiện bộ lọc tài liệu tự động khi chọn tab Giáo án hoặc Tài nguyên
             const infoBox = document.getElementById('info-box-wrapper');
             const khoTaiLieu = document.getElementById('khoTaiLieuContainer');
             const selectFilter = document.getElementById('categoryFilter');
@@ -520,15 +516,13 @@
                 infoBox.style.display = 'none';
                 khoTaiLieu.style.display = 'block';
                 
-                // Đặt mặc định bộ lọc nhanh khớp với tab đang đứng
                 if (key === 'giaoan') {
                     selectFilter.value = 'Giáo án';
                 } else {
-                    selectFilter.value = 'all'; // Tự do tìm tất cả đề cương, tài liệu lớp
+                    selectFilter.value = 'all';
                 }
                 filterDocuments();
             } else {
-                // Hiện lại khối giới thiệu bình thường
                 infoBox.style.display = 'grid';
                 khoTaiLieu.style.display = 'none';
                 
@@ -538,13 +532,11 @@
                 document.getElementById('main-image').src = data[key].image;
             }
 
-            // Đổi trạng thái nút kích hoạt trên menu ngang
             document.querySelectorAll('.nav-list a').forEach(el => el.classList.remove('active'));
             const activeBtn = document.getElementById(`btn-${key}`);
             if(activeBtn) activeBtn.classList.add('active');
         }
 
-        // --- XỬ LÝ ĐỌC FILE JSON VÀ TÌM KIẾM BỘ LỌC TÀI LIỆU ---
         document.addEventListener("DOMContentLoaded", () => {
             fetchJsonData();
             document.getElementById('searchInput').addEventListener('input', filterDocuments);
