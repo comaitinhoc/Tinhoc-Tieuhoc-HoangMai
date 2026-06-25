@@ -17,6 +17,7 @@
         }
 
         body {
+            /* MÀU NỀN SÁNG SỦA, KHÔNG BỊ TỐI */
             background-color: #f0f9ff; 
             color: #1e293b;
             padding: 20px 0;
@@ -30,6 +31,9 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             border-radius: 8px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 90vh; /* Giúp wrapper luôn cao tối thiểu để đẩy footer xuống */
         }
 
         .header-banner {
@@ -90,6 +94,7 @@
             gap: 25px;
             padding: 25px;
             background-color: #ffffff;
+            flex-grow: 1; /* Đẩy footer xuống đáy wrapper */
         }
 
         .sidebar {
@@ -139,6 +144,7 @@
             border: 1px solid #e2e8f0;
             padding: 25px;
             border-radius: 4px;
+            background-color: #ffffff;
         }
 
         .content-title {
@@ -225,4 +231,191 @@
             color: #b91c1c;
             font-weight: 700;
             font-size: 1.15rem;
-            margin-bottom: 20px
+            margin-bottom: 20px;
+        }
+
+        .info-text .desc-box {
+            border: 1px dashed #b91c1c;
+            background-color: #fef2f2; 
+            padding: 20px;
+            border-radius: 4px;
+            line-height: 1.7;
+            text-align: justify;
+            color: #991b1b;
+        }
+
+        .info-image-container {
+            border: 1px solid #e2e8f0;
+            padding: 6px;
+            background-color: #ffffff;
+            border-radius: 4px;
+        }
+
+        .info-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .kho-tai-lieu-container {
+            display: none;
+        }
+
+        .documents-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .doc-card-custom {
+            background: #ffffff; 
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid #b91c1c;
+            border-radius: 6px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.2s;
+        }
+
+        .doc-card-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .doc-tag-custom {
+            background-color: #fef2f2;
+            color: #b91c1c;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            align-self: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .no-data-msg {
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
+            padding: 40px 0;
+            width: 100%;
+        }
+
+        /* CHÂN TRANG ĐÃ SỬA: NHỎ LẠI 1/3, MÀU XÁM SLATE NHẸ NHÀNG */
+        .site-footer {
+            background-color: #f8fafc; /* Màu xám Slate rất nhã, sáng sủa */
+            color: #64748b; /* Màu chữ xám vừa phải, dễ đọc */
+            text-align: center;
+            padding: 10px; /* Thu hẹp chiều cao, nhỏ gọn cực kỳ */
+            font-size: 0.85rem; /* Chữ nhỏ lại một chút cho thoáng */
+            border-top: 1px solid #e2e8f0;
+            width: 100%;
+            margin-top: auto; /* Đảm bảo footer luôn ở đáy */
+        }
+
+        .site-footer p {
+            margin: 2px 0; /* Thu hẹp khoảng cách giữa các dòng */
+        }
+
+        .site-footer strong {
+            color: #1e293b; /* Màu mạnh cho tên và hotline */
+        }
+
+        @media (max-width: 900px) {
+            .main-container { grid-template-columns: 1fr; }
+            .teacher-info-box { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header-banner">
+            <i class="fa-solid fa-desktop"></i>
+            <div class="header-text">
+                <h1>GÓC TIN HỌC SÁNG TẠO - CÔ HOÀNG MAI</h1>
+                <p>Trang thông tin học liệu cá nhân | Đơn vị công tác: Trường TH Diễn Liên</p>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a onclick="changeContent('trangchu')" id="btn-trangchu" class="active"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                <li><a onclick="changeContent('gioithieu')" id="btn-gioithieu">Giới thiệu</a></li>
+                <li><a onclick="changeContent('giaoan')" id="btn-giaoan">Giáo án giảng dạy</a></li>
+                <li><a onclick="changeContent('scratch')" id="btn-scratch">Dự án Scratch</a></li>
+                <li><a onclick="changeContent('tailieu')" id="btn-tailieu">Tài nguyên học tập</a></li>
+                <li><a onclick="changeContent('phuhuynh')" id="btn-phuhuynh">Góc phụ huynh</a></li>
+                <li><a onclick="changeContent('lienhe')" id="btn-lienhe">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-container">
+            <aside class="sidebar">
+                <div class="widget">
+                    <div class="widget-title">Học liệu Tin học</div>
+                    <ul class="widget-content">
+                        <li><a onclick="changeContent('giaoan')"><i class="fa-solid fa-angle-right"></i> Bài giảng khối 3, 4, 5</a></li>
+                        <li><a onclick="changeContent('scratch')"><i class="fa-solid fa-angle-right"></i> Kho sản phẩm Scratch</a></li>
+                        <li><a onclick="changeContent('tailieu')"><i class="fa-solid fa-angle-right"></i> Đề cương & Bài tập ôn tập</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <div class="widget-title">Liên kết ngành</div>
+                    <ul class="widget-content">
+                        <li><a href="https://csdl.moet.gov.vn" target="_blank"><i class="fa-solid fa-external-link"></i> CSDL Bộ Giáo dục</a></li>
+                        <li><a href="http://nghean.edu.vn" target="_blank"><i class="fa-solid fa-external-link"></i> Sở GD&ĐT Nghệ An</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="content-area">
+                <h3 class="content-title" id="content-main-title">CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH</h3>
+                
+                <div class="teacher-info-box" id="info-box-wrapper">
+                    <div class="info-text">
+                        <h2 id="teacher-name">Cô Hoàng Mai</h2>
+                        <p class="role" id="teacher-role">Giáo viên Tin học - Trường TH Diễn Liên</p>
+                        <div class="desc-box" id="page-text">
+                            Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.
+                        </div>
+                    </div>
+                    <div class="info-image-container">
+                        <img id="main-image" src="cb.jpg" alt="Giờ học Tin học Cô Hoàng Mai">
+                    </div>
+                </div>
+
+                <div class="kho-tai-lieu-container" id="khoTaiLieuContainer">
+                    <div class="search-filter-box">
+                        <div class="search-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm tên tài liệu hoặc mô tả..." oninput="filterDocuments()">
+                        </div>
+                        <div class="filter-wrapper">
+                            <span><i class="fas fa-filter"></i> Lọc danh mục:</span>
+                            <select id="categoryFilter" class="filter-select" onchange="filterDocuments()">
+                                <option value="all">-- Tất cả mục --</option>
+                                <option value="Giáo án">Giáo án</option>
+                                <option value="Đề kiểm tra">Đề kiểm tra</option>
+                                <option value="Tài liệu AI">Tài liệu AI</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="documents-grid-custom" id="documentsGrid"></div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <p>© Bản quyền nội dung thuộc về <strong>Góc Tin Học Sáng Tạo - Cô Hoàng Mai</strong></p>
+            <p>Thiết kế bởi <strong>Cô Hoàng Mai</strong> | Hotline hỗ trợ: <strong>0888.818.081</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        const data = {
+            trangchu: { mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Chào mừng các thầy cô, bậc
