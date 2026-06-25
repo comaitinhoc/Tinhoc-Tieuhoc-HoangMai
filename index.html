@@ -15,12 +15,14 @@
             font-family: 'Open Sans', sans-serif;
         }
 
+        /* KHÔI PHỤC NỀN TRẮNG TINH KHÔI THEO GIAO DIỆN CŨ */
         body {
             background-color: #ffffff;
             color: #1e293b;
             padding-top: 80px;
         }
 
+        /* THANH MENU NGANG NỀN TRẮNG CHỮ XANH LÁ */
         header {
             background-color: #ffffff;
             position: fixed;
@@ -60,15 +62,13 @@
             color: #64748b;
             font-weight: 600;
             transition: color 0.3s;
-            cursor: pointer;
-            padding: 5px 0;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #15803d;
-            border-bottom: 2px solid #15803d;
         }
 
+        /* BỐ CỤC CHỮ VÀ ẢNH ĐÚNG PHOM GỐC */
         .hero {
             max-width: 1200px;
             margin: 4rem auto;
@@ -107,6 +107,7 @@
             text-align: justify;
         }
 
+        /* KHUNG ẢNH TRÒN CÓ VIỀN GRADIENT ĐỎ - XANH CHUẨN ĐẸP */
         .hero-image {
             display: flex;
             justify-content: center;
@@ -132,13 +133,22 @@
             object-fit: cover;
             border-radius: 50%;
             background-color: #ffffff;
-            transition: opacity 0.2s ease;
         }
 
+        /* HIỂN THỊ TRÊN ĐIỆN THOẠI */
         @media (max-width: 768px) {
-            .hero { grid-template-columns: 1fr; text-align: center; margin: 2rem auto; }
-            .image-circle { width: 280px; height: 280px; }
-            .nav-links { display: none; }
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                margin: 2rem auto;
+            }
+            .image-circle {
+                width: 280px;
+                height: 280px;
+            }
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -150,94 +160,31 @@
                 <i class="fa-solid fa-laptop-code"></i> Cô Hoàng Mai
             </a>
             <ul class="nav-links">
-                <li><a onclick="changeContent('trangchu')" id="btn-trangchu" class="active">Trang chủ</a></li>
-                <li><a onclick="changeContent('gioithieu')" id="btn-gioithieu">Giới thiệu</a></li>
-                <li><a onclick="changeContent('giaoan')" id="btn-giaoan">Giáo án</a></li>
-                <li><a onclick="changeContent('scratch')" id="btn-scratch">Dự án Scratch</a></li>
-                <li><a onclick="changeContent('thuvien')" id="btn-thuvien">Thư viện ảnh</a></li>
-                <li><a onclick="changeContent('tailieu')" id="btn-tailieu">Tài liệu</a></li>
-                <li><a onclick="changeContent('lienhe')" id="btn-lienhe">Liên hệ</a></li>
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Giáo án</a></li>
+                <li><a href="#">Dự án Scratch</a></li>
+                <li><a href="#">Thư viện ảnh</a></li>
+                <li><a href="#">Tài liệu</a></li>
+                <li><a href="#">Liên hệ</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="hero">
         <div class="hero-content">
-            <h1 id="page-title">Cô Hoàng Mai</h1>
-            <p class="subtitle" id="page-subtitle">Giáo viên Tin học</p>
+            <h1>Cô Hoàng Mai</h1>
+            <p class="subtitle">Giáo viên Tin học</p>
             <p class="location">Trường TH Diễn Liên - Xã Quảng Châu - Nghệ An</p>
-            <p class="welcome-text" id="page-text">Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.</p>
+            <p class="welcome-text">Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.</p>
         </div>
 
         <div class="hero-image">
             <div class="image-circle">
-                <img id="main-image" src="https://lh3.googleusercontent.com/d/1Hbkr_Jdw-BQ-6olLTsc9Qw3_0lqPP8Fp" alt="Ảnh Cô Hoàng Mai">
+                <img src="https://lh3.googleusercontent.com/d/1Hbkr_Jdw-BQ-6olLTsc9Qw3_0lqPP8Fp" alt="Ảnh chân dung Cô Hoàng Mai">
             </div>
         </div>
     </main>
 
-    <script>
-        // CẤU HÌNH ĐƯỜNG DẪN ẢNH TỰ ĐỔI THEO MENU
-        const data = {
-            trangchu: {
-                title: "Cô Hoàng Mai",
-                subtitle: "Giáo viên Tin học",
-                text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.",
-                image: "https://lh3.googleusercontent.com/d/1Hbkr_Jdw-BQ-6olLTsc9Qw3_0lqPP8Fp" // Ảnh chân dung chính của cô
-            },
-            gioithieu: {
-                title: "Về Cô Hoàng Mai",
-                subtitle: "Quá trình công tác và giảng dạy",
-                text: "Giáo viên Tin học tại Trường Tiểu học Diễn Liên. Luôn nỗ lực đem lại những tiết học công nghệ thú vị, dễ hiểu và truyền cảm hứng sáng tạo lập trình tới các em học sinh.",
-                image: "https://lh3.googleusercontent.com/d/1Hbkr_Jdw-BQ-6olLTsc9Qw3_0lqPP8Fp" // Giữ ảnh cô ở mục giới thiệu
-            },
-            giaoan: {
-                title: "Kho Giáo Án Điện Tử",
-                subtitle: "Học liệu số khối lớp 3, 4, 5",
-                text: "Hệ thống bài giảng chỉn chu, bám sát chương trình giáo dục phổ thông mới nhằm tối ưu hóa khả năng tiếp cận máy tính cho học sinh tiểu học.",
-                image: "giaoan.jpg" // Sẽ tự gọi file ảnh tên là 'giaoan.jpg' cô up lên GitHub
-            },
-            scratch: {
-                title: "Sáng Tạo Với Scratch",
-                subtitle: "Ươm mầm tư duy lập trình kéo thả",
-                text: "Nơi lưu trữ và tổng hợp các sản phẩm trò chơi, hoạt hình sáng tạo do cô thiết kế hướng dẫn học sinh thực hành và trải nghiệm.",
-                image: "scratch.jpg" // Sẽ tự gọi file ảnh tên là 'scratch.jpg' cô up lên GitHub
-            },
-            thuvien: {
-                title: "Thư Viện Lớp Học",
-                subtitle: "Khoảnh khắc thực hành phòng máy",
-                text: "Hình ảnh ghi lại không khí học tập sôi nổi của các em học sinh trường Tiểu học Diễn Liên trong các giờ học Tin học bổ ích.",
-                image: "lophoc.jpg" // Sẽ tự gọi file ảnh tên là 'lophoc.jpg' cô up lên GitHub
-            },
-            tailieu: {
-                title: "Tài Liệu Ôn Tập",
-                subtitle: "Bài tập hỗ trợ tự học tại nhà",
-                text: "Hệ thống phiếu giao bài, câu hỏi trắc nghiệm kiến thức và cẩm nang luyện ngón gõ bàn phím chuẩn dành cho học sinh.",
-                image: "giaoan.jpg"
-            },
-            lienhe: {
-                title: "Thông Tin Liên Hệ",
-                subtitle: "Kết nối giáo dục",
-                text: "Mọi đóng góp chuyên môn, trao đổi học tập xin vui lòng liên hệ qua địa chỉ Email chính thức: cohoangmai.dienlien@gmail.com.",
-                image: "https://lh3.googleusercontent.com/d/1Hbkr_Jdw-BQ-6olLTsc9Qw3_0lqPP8Fp"
-            }
-        };
-
-        function changeContent(key) {
-            document.getElementById('page-title').innerText = data[key].title;
-            document.getElementById('page-subtitle').innerText = data[key].subtitle;
-            document.getElementById('page-text').innerText = data[key].text;
-            
-            const imgElement = document.getElementById('main-image');
-            imgElement.style.opacity = 0;
-            setTimeout(() => {
-                imgElement.src = data[key].image;
-                imgElement.style.opacity = 1;
-            }, 150);
-
-            document.querySelectorAll('.nav-links a').forEach(el => el.classList.remove('active'));
-            document.getElementById(`btn-${key}`).classList.add('active');
-        }
-    </script>
 </body>
 </html>
