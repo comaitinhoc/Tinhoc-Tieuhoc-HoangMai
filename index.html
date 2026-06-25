@@ -253,6 +253,7 @@
             border-radius: 2px;
         }
 
+        /* KHU VỰC HIỂN THỊ TÀI LIỆU */
         .kho-tai-lieu-container {
             display: none;
         }
@@ -273,6 +274,7 @@
             flex-direction: column;
             justify-content: space-between;
             transition: 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .doc-card-custom:hover {
@@ -299,7 +301,7 @@
             width: 100%;
         }
 
-        /* CHÂN TRANG ĐẸP GỌN, NHỎ BẰNG 1/3, MÀU XÁM TRẮNG NHÃ NHẶN */
+        /* CHÂN TRANG ĐÃ SỬA CHUẨN: NHỎ BẰNG 1/3, 2 HÀNG THOÁNG, MÀU XÁM TRẮNG NHÃ NHẶN */
         .site-footer {
             background-color: #f8fafc; 
             color: #64748b; 
@@ -411,64 +413,4 @@
 
     <script>
         const data = {
-            trangchu: { mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.", image: "cb.jpg" },
-            gioithieu: { mainTitle: "GIỚI THIỆU GIÁO VIÊN PHU TRÁCH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Công tác chuyên môn tại trường Tiểu học Diễn Liên. Luôn nỗ lực đổi mới phương pháp dạy học, tích cực ứng dụng công nghệ thông tin nhằm giúp học sinh làm quen và làm chủ máy tính một cách sáng tạo.", image: "cb.jpg" },
-            giaoan: { mainTitle: "BÀI GIẢNG ĐIỆN TỬ VÀ GIÁO ÁN KHỐI 3 - 4 - 5" },
-            scratch: { mainTitle: "LẬP TRÌNH KÉO THẢ SCRATCH SÁNG TẠO", name: "Sản phẩm tư duy toán học", role: "Học tập qua dự án", text: "Tổng hợp các bài tập thực hành, sản phẩm hoạt hình, trò chơi tương tác do cô thiết kế nhằm phát triển khả năng tư duy logic và giải quyết vấn đề cho các em học sinh.", image: "cb.jpg" },
-            tailieu: { mainTitle: "TÀI NGUYÊN VÀ ĐỀ CƯƠNG ÔN TẬP" },
-            phuhuynh: { mainTitle: "GÓC DÀNH CHO PHỤ HUYNH", name: "Phối hợp giáo dục", role: "Đồng hành cùng con công nghệ số", text: "Thông tin trao đổi giữa giáo viên bộ môn và phụ huynh về tình hình học tập phòng máy của học sinh, cẩm nang hướng dẫn phụ huynh quản lý con sử dụng Internet an toàn tại nhà.", image: "cb.jpg" },
-            lienhe: { mainTitle: "THÔNG TIN LIÊN HỆ CHUYÊN MÔN", name: "Hộp thư điện tử", role: "Kết nối giáo viên", text: "Mọi thông tin cần trao đổi, đóng góp ý kiến về chuyên môn môn Tin học hoặc phản ánh học tập, quý phụ huynh và đồng nghiệp vui lòng liên hệ trực tiếp qua Email nhà trường.", image: "cb.jpg" }
-        };
-
-        const DATA_JSON_DOCUMENTS = [
-            {
-                id: 1,
-                monHoc: "Giáo án",
-                ten: "Giáo án Tin học lớp 3 - Sách Kết nối tri thức (Cả năm)",
-                moTa: "Tài liệu giáo án chi tiết cả năm học bám sát khung chương trình mới dành cho giáo viên.",
-                ngayCapNhat: "2026-06-25",
-                urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
-                urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
-            },
-            {
-                id: 2,
-                monHoc: "Đề kiểm tra",
-                ten: "Đề kiểm tra định kỳ Học kỳ 1 - Tin học lớp 4",
-                moTa: "Gồm file ma trận, đề thi lý thuyết, thực hành và đáp án chấm chi tiết.",
-                ngayCapNhat: "2026-06-24",
-                urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
-                urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
-            },
-            {
-                id: 3,
-                monHoc: "Tài liệu AI",
-                ten: "Tài liệu tập huấn ứng dụng AI Scratch nâng cao cho Tiểu học",
-                moTa: "Hướng dẫn tích hợp các công cụ trí tuệ nhân tạo vào thiết kế bài giảng Scratch sinh động.",
-                ngayCapNhat: "2026-06-23",
-                urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
-                urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
-            }
-        ];
-
-        /* ĐÃ KHÔI PHỤC VÀ HOÀN THIỆN HOÀN TOÀN HÀM CHUYỂN ĐỔI TAB NỘI DUNG */
-        function changeContent(key) {
-            document.getElementById('content-main-title').innerText = data[key].mainTitle;
-            const infoBox = document.getElementById('info-box-wrapper');
-            const khoTaiLieu = document.getElementById('khoTaiLieuContainer');
-
-            if (key === 'giaoan' || key === 'tailieu') {
-                infoBox.style.display = 'none';
-                khoTaiLieu.style.display = 'block';
-                document.getElementById('categoryFilter').value = 'all';
-                document.getElementById('searchInput').value = '';
-                renderDocuments(DATA_JSON_DOCUMENTS);
-            } else {
-                infoBox.style.display = 'grid';
-                khoTaiLieu.style.display = 'none';
-                document.getElementById('teacher-name').innerText = data[key].name;
-                document.getElementById('teacher-role').innerText = data[key].role;
-                document.getElementById('page-text').innerText = data[key].text;
-                document.getElementById('main-image').src = data[key].image;
-            }
-
-            document.querySelectorAll('.nav
+            trangchu: { mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không
