@@ -145,6 +145,55 @@
             margin-bottom: 20px;
         }
 
+        .search-filter-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .filter-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-select {
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            background-color: #ffffff;
+            outline: none;
+        }
+
         .teacher-info-box {
             display: grid;
             grid-template-columns: 1fr 350px;
@@ -190,7 +239,6 @@
 
         .kho-tai-lieu-container {
             display: none;
-            margin-top: 15px;
         }
 
         .documents-grid-custom {
@@ -199,19 +247,26 @@
             gap: 20px;
         }
 
-        /* PHẦN ĐỊNH DẠNG CHO CHÂN TRANG CHUYÊN NGHIỆP */
+        .no-data-msg {
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
+            padding: 30px 0;
+            width: 100%;
+        }
+
         .site-footer {
             background-color: #1e293b;
             color: #cbd5e1;
             text-align: center;
-            padding: 15px 20px;
+            padding: 20px;
             font-size: 0.9rem;
-            border-top: 2px solid #b91c1c;
-            line-height: 1.5;
+            border-top: 3px solid #b91c1c;
+            line-height: 1.6;
         }
 
         .site-footer p {
-            margin: 0;
+            margin: 3px 0;
         }
 
         .site-footer strong {
@@ -283,14 +338,30 @@
                 </div>
 
                 <div class="kho-tai-lieu-container" id="khoTaiLieuContainer">
+                    <div class="search-filter-box">
+                        <div class="search-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm tên tài liệu hoặc mô tả..." oninput="filterDocuments()">
+                        </div>
+                        <div class="filter-wrapper">
+                            <span><i class="fas fa-filter"></i> Lọc danh mục:</span>
+                            <select id="categoryFilter" class="filter-select" onchange="filterDocuments()">
+                                <option value="all">-- Tất cả mục --</option>
+                                <option value="Giáo án">Giáo án</option>
+                                <option value="Đề kiểm tra">Đề kiểm tra</option>
+                                <option value="Tài liệu AI">Tài liệu AI</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="documents-grid-custom" id="documentsGrid"></div>
                 </div>
             </main>
         </div>
 
         <footer class="site-footer">
-            <p>© Bản quyền nội dung thuộc về <strong>Góc Tin Học Sáng Tạo</strong></p>
-            <p>Trang web được thiết kế và vận hành bởi <strong>Cô Hoàng Mai</strong> | Hotline liên hệ: <strong>0888.818.081</strong></p>
+            <p>© Bản quyền nội dung thuộc về <strong>Góc Tin Học Sáng Tạo - Cô Hoàng Mai</strong></p>
+            <p>Trang web được thiết kế và vận hành chuyên nghiệp bởi <strong>Cô Hoàng Mai</strong></p>
+            <p>Hotline hỗ trợ chuyên môn & liên hệ: <strong>0888.818.081</strong></p>
         </footer>
     </div>
 
@@ -298,13 +369,14 @@
         const data = {
             trangchu: { mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Chào mừng các thầy cô, bậc phụ huynh và các em học sinh đến với không gian sáng tạo công nghệ. Nơi ươm mầm những kỹ năng tư duy máy tính đầu đời cho thế hệ tương lai.", image: "cb.jpg" },
             gioithieu: { mainTitle: "GIỚI THIỆU GIÁO VIÊN PHU TRÁCH", name: "Cô Hoàng Mai", role: "Giáo viên Tin học - Trường TH Diễn Liên", text: "Công tác chuyên môn tại trường Tiểu học Diễn Liên. Luôn nỗ lực đổi mới phương pháp dạy học, tích cực ứng dụng công nghệ thông tin nhằm giúp học sinh làm quen và làm chủ máy tính một cách sáng tạo.", image: "cb.jpg" },
-            giaoan: { mainTitle: "BÀI GIẢNG ĐIỆN TỬ KHỐI 3 - 4 - 5" },
+            giaoan: { mainTitle: "BÀI GIẢNG ĐIỆN TỬ VÀ GIÁO ÁN KHỐI 3 - 4 - 5" },
             scratch: { mainTitle: "LẬP TRÌNH KÉO THẢ SCRATCH SÁNG TẠO", name: "Sản phẩm tư duy toán học", role: "Học tập qua dự án", text: "Tổng hợp các bài tập thực hành, sản phẩm hoạt hình, trò chơi tương tác do cô thiết kế nhằm phát triển khả năng tư duy logic và giải quyết vấn đề cho các em học sinh.", image: "cb.jpg" },
             tailieu: { mainTitle: "TÀI NGUYÊN VÀ ĐỀ CƯƠNG ÔN TẬP" },
             phuhuynh: { mainTitle: "GÓC DÀNH CHO PHỤ HUYNH", name: "Phối hợp giáo dục", role: "Đồng hành cùng con công nghệ số", text: "Thông tin trao đổi giữa giáo viên bộ môn và phụ huynh về tình hình học tập phòng máy của học sinh, cẩm nang hướng dẫn phụ huynh quản lý con sử dụng Internet an toàn tại nhà.", image: "cb.jpg" },
             lienhe: { mainTitle: "THÔNG TIN LIÊN HỆ CHUYÊN MÔN", name: "Hộp thư điện tử", role: "Kết nối giáo viên", text: "Mọi thông tin cần trao đổi, đóng góp ý kiến về chuyên môn môn Tin học hoặc phản ánh học tập, quý phụ huynh và đồng nghiệp vui lòng liên hệ trực tiếp qua Email nhà trường.", image: "cb.jpg" }
         };
 
+        // KHO DỮ LIỆU TÀI LIỆU CHUẨN ĐƯỢC FIX LỖI BỘ LỌC
         const DATA_JSON_DOCUMENTS = [
             {
                 id: 1,
@@ -323,6 +395,15 @@
                 ngayCapNhat: "2026-06-24",
                 urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
                 urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
+            },
+            {
+                id: 3,
+                monHoc: "Tài liệu AI",
+                ten: "Tài liệu tập huấn ứng dụng AI Scratch nâng cao cho Tiểu học",
+                moTa: "Hướng dẫn tích hợp các công cụ trí tuệ nhân tạo vào thiết kế bài giảng Scratch sinh động.",
+                ngayCapNhat: "2026-06-23",
+                urlXem: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing",
+                urlTai: "https://drive.google.com/drive/folders/18rnnxoCbB3e8ltDueHOMfC3sWDzczIyn?usp=sharing"
             }
         ];
 
@@ -334,4 +415,63 @@
             if (key === 'giaoan' || key === 'tailieu') {
                 infoBox.style.display = 'none';
                 khoTaiLieu.style.display = 'block';
-                renderDocuments
+                
+                // Reset lại bộ lọc về "Tất cả" khi bấm chuyển menu để luôn hiện dữ liệu
+                document.getElementById('categoryFilter').value = 'all';
+                document.getElementById('searchInput').value = '';
+                renderDocuments(DATA_JSON_DOCUMENTS);
+            } else {
+                infoBox.style.display = 'grid';
+                khoTaiLieu.style.display = 'none';
+                document.getElementById('teacher-name').innerText = data[key].name;
+                document.getElementById('teacher-role').innerText = data[key].role;
+                document.getElementById('page-text').innerText = data[key].text;
+                document.getElementById('main-image').src = data[key].image;
+            }
+
+            document.querySelectorAll('.nav-list a').forEach(el => el.classList.remove('active'));
+            const activeBtn = document.getElementById(`btn-${key}`);
+            if(activeBtn) activeBtn.classList.add('active');
+        }
+
+        function filterDocuments() {
+            const keyword = document.getElementById('searchInput').value.toLowerCase().trim();
+            const category = document.getElementById('categoryFilter').value;
+
+            const filtered = DATA_JSON_DOCUMENTS.filter(doc => {
+                const matchesKeyword = doc.ten.toLowerCase().includes(keyword) || doc.moTa.toLowerCase().includes(keyword);
+                const matchesCategory = (category === 'all' || doc.monHoc === category);
+                return matchesKeyword && matchesCategory;
+            });
+
+            renderDocuments(filtered);
+        }
+
+        function renderDocuments(docs) {
+            const grid = document.getElementById('documentsGrid');
+            grid.innerHTML = '';
+            
+            if(docs.length === 0) {
+                grid.innerHTML = '<div class="no-data-msg">Không tìm thấy tài liệu phù hợp với điều kiện lọc.</div>';
+                return;
+            }
+
+            docs.forEach(doc => {
+                const card = document.createElement('div');
+                card.style = "background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #b91c1c; border-radius: 6px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.05);";
+                card.innerHTML = `
+                    <span style="background-color: #fef2f2; color: #b91c1c; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; align-self: flex-start; margin-bottom: 10px;">${doc.monHoc}</span>
+                    <h4 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 8px; font-weight: 700;">${doc.ten}</h4>
+                    <p style="color: #475569; font-size: 0.9rem; margin-bottom: 12px; flex-grow: 1; line-height: 1.4;">${doc.moTa}</p>
+                    <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px;"><i class="far fa-calendar-alt"></i> Cập nhật: ${doc.ngayCapNhat}</div>
+                    <div style="display: flex; gap: 8px;">
+                        <a href="${doc.urlXem}" target="_blank" style="flex: 1; padding: 8px; border-radius: 4px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: 500; border: 1px solid #475569; color: #475569;"><i class="fas fa-eye"></i> Xem liền</a>
+                        <a href="${doc.urlTai}" target="_blank" style="flex: 1; padding: 8px; border-radius: 4px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: 500; background-color: #b91c1c; color: #ffffff;"><i class="fas fa-download"></i> Tải về</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
