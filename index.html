@@ -16,53 +16,52 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        /* NỀN NGOÀI TRANG WEB GIỮ NGUYÊN MÀU XÁM TRẮNG NHƯ CŨ */
+        /* Giữ nguyên màu nền xám nhạt phía ngoài trang web */
         body {
             background-color: #f1f5f9;
             color: #333333;
             padding: 20px 0;
         }
 
-        /* KHUNG CHỨA TOÀN BỘ TRANG WEB GIỮ NGUYÊN NỀN TRẮNG */
+        /* Giữ nguyên khung chứa nội dung màu trắng ở giữa */
         .wrapper {
             max-width: 1200px;
             margin: 0 auto;
             background-color: #ffffff;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
-        /* BANNER TRÊN CÙNG ĐỔI TIÊU ĐỀ SANG MÀU ĐỎ ĐỒNG BỘ */
+        /* PHẦN BANNER TRÊN CÙNG - ĐỔI SANG CHỮ MÀU ĐỎ TRANG TRỌNG */
         .header-banner {
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 15px;
             background-color: #ffffff;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .header-banner i {
             font-size: 3rem;
-            color: #b91c1c; /* Đổi icon sang màu đỏ */
+            color: #b91c1c; /* Đổi icon sang đỏ */
         }
 
         .header-text h1 {
-            color: #b91c1c; /* Đổi chữ tiêu đề sang màu đỏ */
+            color: #b91c1c; /* Đổi tiêu đề sang đỏ */
             font-size: 1.8rem;
             font-weight: 700;
             text-transform: uppercase;
         }
 
         .header-text p {
-            color: #64748b;
+            color: #475569;
             font-size: 1rem;
             margin-top: 5px;
         }
 
-        /* THANH MENU CHÍNH - ĐÃ ĐỔI TỪ NỀN XANH LÁ SANG NỀN MÀU ĐỎ ĐÔ */
+        /* THANH MENU NGANG CHÍNH - ĐỔI TỪ XANH LÁ SANG ĐỎ ĐÔ */
         .main-nav {
-            background-color: #b91c1c; /* Nền đỏ cho menu */
+            background-color: #b91c1c; 
         }
 
         .nav-list {
@@ -82,12 +81,12 @@
             cursor: pointer;
         }
 
-        /* Khi di chuột vào hoặc menu đang được chọn sẽ đổi sang màu đỏ đậm hơn */
+        /* Khi di chuột hoặc menu đang kích hoạt sẽ đổi sang màu đỏ đậm hơn */
         .nav-list li a:hover, .nav-list li a.active {
             background-color: #991b1b; 
         }
 
-        /* BỐ CỤC HAI CỘT GIỮ NGUYÊN */
+        /* BỐ CỤC 2 CỘT GIỮ NGUYÊN HOÀN TOÀN */
         .main-container {
             display: grid;
             grid-template-columns: 280px 1fr;
@@ -102,13 +101,13 @@
             gap: 20px;
         }
 
-        /* CỘT TRÁI: VIỀN VÀ TIÊU ĐỀ ĐỔI SANG MÀU ĐỎ */
+        /* CỘT TRÁI: ĐỔI ĐỒNG BỘ VIỀN VÀ NỀN TIÊU ĐỀ SANG MÀU ĐỎ */
         .widget {
             border: 1px solid #b91c1c;
         }
 
         .widget-title {
-            background-color: #b91c1c; /* Nền đỏ cho tiêu đề danh mục trái */
+            background-color: #b91c1c; 
             color: #ffffff;
             padding: 10px 15px;
             font-size: 1rem;
@@ -127,28 +126,29 @@
         .widget-content li a {
             display: block;
             padding: 10px 15px;
-            color: #333;
+            color: #333333;
             text-decoration: none;
             font-size: 0.95rem;
         }
 
         .widget-content li a:hover {
-            background-color: #fef2f2; /* Nền hồng nhạt khi hover */
-            color: #b91c1c; /* Chữ chuyển đỏ khi hover */
+            background-color: #fef2f2; /* Đổi màu nền nhẹ khi chỉ chuột */
+            color: #b91c1c; /* Đổi chữ sang màu đỏ */
         }
 
-        /* CỘT PHẢI NỘI DUNG CHÍNH GIỮ NGUYÊN */
+        /* CỘT PHẢI NỘI DUNG CHÍNH */
         .content-area {
             border: 1px solid #e2e8f0;
             padding: 20px;
         }
 
+        /* Đổi đường viền và tiêu đề nội dung sang màu đỏ */
         .content-title {
-            color: #991b1b;
+            color: #b91c1c;
             font-size: 1.4rem;
             font-weight: 700;
             text-transform: uppercase;
-            border-bottom: 2px solid #991b1b;
+            border-bottom: 2px solid #b91c1c;
             padding-bottom: 8px;
             margin-bottom: 20px;
         }
@@ -161,19 +161,19 @@
         }
 
         .info-text h2 {
-            color: #b91c1c; /* Tên giáo viên chuyển sang màu đỏ */
+            color: #b91c1c; /* Đổi chữ tên Cô Hoàng Mai sang đỏ */
             font-size: 1.8rem;
             margin-bottom: 5px;
         }
 
         .info-text .role {
-            color: #64748b;
-            font-weight: 500;
+            color: #b91c1c; /* Đổi chữ chức vụ sang đỏ chuyên nghiệp */
+            font-weight: 700;
             font-size: 1.1rem;
             margin-bottom: 15px;
         }
 
-        /* KHUNG ĐỂ CHỮ GIỚI THIỆU CHUYỂN SANG VIỀN ĐỎ VÀ NỀN HỒNG NHẠT CHO ĐỒNG BỘ */
+        /* Đổi khung viền nét đứt và chữ giới thiệu sang màu đỏ đồng bộ */
         .info-text .desc-box {
             border: 1px dashed #b91c1c;
             background-color: #fef2f2;
@@ -184,10 +184,11 @@
             color: #991b1b;
         }
 
+        /* KHUNG ẢNH MINH HỌA PHÍA PHẢI GIỮ NGUYÊN */
         .info-image-container {
-            border: 1px solid #cbd5e1;
+            border: 1px solid #e2e8f0;
             padding: 5px;
-            background-color: #fff;
+            background-color: #ffffff;
         }
 
         .info-image-container img {
@@ -265,7 +266,7 @@
     </div>
 
     <script>
-        // Giữ nguyên toàn bộ nội dung chữ nghĩa và các liên kết ảnh tự chuyển đổi khi kích menu
+        // Giữ nguyên vẹn toàn bộ dữ liệu chữ nghĩa chuyển đổi động của cô
         const data = {
             trangchu: {
                 mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH",
@@ -289,4 +290,46 @@
                 image: "https://images2.imgbox.com/60/7a/mC73POfM_o.jpg"
             },
             scratch: {
-                mainTitle: "
+                mainTitle: "LẬP TRÌNH KÉO THẢ SCRATCH SÁNG TẠO",
+                name: "Sản phẩm tư duy toán học",
+                role: "Học tập qua dự án",
+                text: "Tổng hợp các bài tập thực hành, sản phẩm hoạt hình, trò chơi tương tác do cô thiết kế nhằm phát triển khả năng tư duy logic và giải quyết vấn đề cho các em học sinh.",
+                image: "https://images2.imgbox.com/c6/33/M9y0vT6Y_o.jpg"
+            },
+            tailieu: {
+                mainTitle: "TÀI NGUYÊN VÀ ĐỀ CƯƠNG ÔN TẬP",
+                name: "Tài liệu học tập bổ trợ",
+                role: "Học sinh tự học tại nhà",
+                text: "Nơi cung cấp các bộ câu hỏi ôn tập trắc nghiệm kiến thức lý thuyết, bài tập rèn luyện kỹ năng gõ 10 ngón chuẩn giúp các em củng cố bài học ngoài giờ lên lớp.",
+                image: "https://images2.imgbox.com/60/7a/mC73POfM_o.jpg"
+            },
+            phuhuynh: {
+                mainTitle: "GÓC DÀNH CHO PHỤ HUYNH",
+                name: "Phối hợp giáo dục",
+                role: "Đồng hành cùng con công nghệ số",
+                text: "Thông tin trao đổi giữa giáo viên bộ môn và phụ huynh về tình hình học tập phòng máy của học sinh, cẩm nang hướng dẫn phụ huynh quản lý con sử dụng Internet an toàn tại nhà.",
+                image: "https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg"
+            },
+            lienhe: {
+                mainTitle: "THÔNG TIN LIÊN HỆ CHUYÊN MÔN",
+                name: "Hộp thư điện tử",
+                role: "Kết nối giáo viên",
+                text: "Mọi thông tin cần trao đổi, đóng góp ý kiến về chuyên môn môn Tin học hoặc phản ánh học tập, quý phụ huynh và đồng nghiệp vui lòng liên hệ trực tiếp qua Email nhà trường.",
+                image: "https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg"
+            }
+        };
+
+        function changeContent(key) {
+            document.getElementById('content-main-title').innerText = data[key].mainTitle;
+            document.getElementById('teacher-name').innerText = data[key].name;
+            document.getElementById('teacher-role').innerText = data[key].role;
+            document.getElementById('page-text').innerText = data[key].text;
+            document.getElementById('main-image').src = data[key].image;
+
+            document.querySelectorAll('.nav-list a').forEach(el => el.classList.remove('active'));
+            const activeBtn = document.getElementById(`btn-${key}`);
+            if(activeBtn) activeBtn.classList.add('active');
+        }
+    </script>
+</body>
+</html>
