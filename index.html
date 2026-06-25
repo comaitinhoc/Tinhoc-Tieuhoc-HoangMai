@@ -16,14 +16,12 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        /* Giữ nguyên màu nền xám nhạt phía ngoài trang web */
         body {
             background-color: #f1f5f9;
             color: #333333;
             padding: 20px 0;
         }
 
-        /* Giữ nguyên khung chứa nội dung màu trắng ở giữa */
         .wrapper {
             max-width: 1200px;
             margin: 0 auto;
@@ -31,7 +29,6 @@
             border: 1px solid #cbd5e1;
         }
 
-        /* PHẦN BANNER TRÊN CÙNG - ĐỔI SANG CHỮ MÀU ĐỎ TRANG TRỌNG */
         .header-banner {
             padding: 20px;
             display: flex;
@@ -43,11 +40,11 @@
 
         .header-banner i {
             font-size: 3rem;
-            color: #b91c1c; /* Đổi icon sang đỏ */
+            color: #b91c1c;
         }
 
         .header-text h1 {
-            color: #b91c1c; /* Đổi tiêu đề sang đỏ */
+            color: #b91c1c;
             font-size: 1.8rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -59,7 +56,6 @@
             margin-top: 5px;
         }
 
-        /* THANH MENU NGANG CHÍNH - ĐỔI TỪ XANH LÁ SANG ĐỎ ĐÔ */
         .main-nav {
             background-color: #b91c1c; 
         }
@@ -81,12 +77,10 @@
             cursor: pointer;
         }
 
-        /* Khi di chuột hoặc menu đang kích hoạt sẽ đổi sang màu đỏ đậm hơn */
         .nav-list li a:hover, .nav-list li a.active {
             background-color: #991b1b; 
         }
 
-        /* BỐ CỤC 2 CỘT GIỮ NGUYÊN HOÀN TOÀN */
         .main-container {
             display: grid;
             grid-template-columns: 280px 1fr;
@@ -101,7 +95,6 @@
             gap: 20px;
         }
 
-        /* CỘT TRÁI: ĐỔI ĐỒNG BỘ VIỀN VÀ NỀN TIÊU ĐỀ SANG MÀU ĐỎ */
         .widget {
             border: 1px solid #b91c1c;
         }
@@ -129,20 +122,19 @@
             color: #333333;
             text-decoration: none;
             font-size: 0.95rem;
+            cursor: pointer;
         }
 
         .widget-content li a:hover {
-            background-color: #fef2f2; /* Đổi màu nền nhẹ khi chỉ chuột */
-            color: #b91c1c; /* Đổi chữ sang màu đỏ */
+            background-color: #fef2f2;
+            color: #b91c1c;
         }
 
-        /* CỘT PHẢI NỘI DUNG CHÍNH */
         .content-area {
             border: 1px solid #e2e8f0;
             padding: 20px;
         }
 
-        /* Đổi đường viền và tiêu đề nội dung sang màu đỏ */
         .content-title {
             color: #b91c1c;
             font-size: 1.4rem;
@@ -161,19 +153,18 @@
         }
 
         .info-text h2 {
-            color: #b91c1c; /* Đổi chữ tên Cô Hoàng Mai sang đỏ */
+            color: #b91c1c;
             font-size: 1.8rem;
             margin-bottom: 5px;
         }
 
         .info-text .role {
-            color: #b91c1c; /* Đổi chữ chức vụ sang đỏ chuyên nghiệp */
+            color: #b91c1c;
             font-weight: 700;
             font-size: 1.1rem;
             margin-bottom: 15px;
         }
 
-        /* Đổi khung viền nét đứt và chữ giới thiệu sang màu đỏ đồng bộ */
         .info-text .desc-box {
             border: 1px dashed #b91c1c;
             background-color: #fef2f2;
@@ -184,7 +175,6 @@
             color: #991b1b;
         }
 
-        /* KHUNG ẢNH MINH HỌA PHÍA PHẢI GIỮ NGUYÊN */
         .info-image-container {
             border: 1px solid #e2e8f0;
             padding: 5px;
@@ -196,6 +186,176 @@
             height: auto;
             display: block;
             object-fit: cover;
+        }
+
+        /* --- PHẦN CSS BỔ SUNG CHO BỘ LỌC TÀI LIỆU (TÔNG ĐỎ ĐÔ) --- */
+        .kho-tai-lieu-container {
+            display: none; /* Mặc định ẩn, chỉ hiện khi chọn đúng tab */
+            margin-top: 15px;
+        }
+
+        .search-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .search-box-custom {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box-custom input {
+            width: 100%;
+            padding: 10px 12px 10px 35px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-box-custom input:focus {
+            border-color: #b91c1c;
+        }
+
+        .search-box-custom i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+
+        .filter-box-custom {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-box-custom select {
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            background-color: #ffffff;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .filter-box-custom select:focus {
+            border-color: #b91c1c;
+        }
+
+        .documents-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .doc-card-custom {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid #b91c1c;
+            border-radius: 6px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .doc-card-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .doc-tag-custom {
+            background-color: #fef2f2;
+            color: #b91c1c;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            align-self: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .doc-title-custom {
+            font-size: 1.05rem;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .doc-desc-custom {
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }
+
+        .doc-date-custom {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .doc-actions-custom {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-custom {
+            flex: 1;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: 0.2s;
+        }
+
+        .btn-view-custom {
+            background-color: transparent;
+            border: 1px solid #475569;
+            color: #475569;
+        }
+
+        .btn-view-custom:hover {
+            background-color: #475569;
+            color: #ffffff;
+        }
+
+        .btn-download-custom {
+            background-color: #b91c1c;
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-download-custom:hover {
+            background-color: #991b1b;
+        }
+
+        .status-text-custom {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 20px 0;
+            color: #64748b;
+            font-style: italic;
         }
 
         @media (max-width: 900px) {
@@ -249,7 +409,7 @@
             <main class="content-area">
                 <h3 class="content-title" id="content-main-title">CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH</h3>
                 
-                <div class="teacher-info-box">
+                <div class="teacher-info-box" id="info-box-wrapper">
                     <div class="info-text">
                         <h2 id="teacher-name">Cô Hoàng Mai</h2>
                         <p class="role" id="teacher-role">Giáo viên Tin học - Trường TH Diễn Liên</p>
@@ -261,12 +421,38 @@
                         <img id="main-image" src="https://images2.imgbox.com/39/da/hsh7hVpB_o.jpg" alt="Giờ học Tin học Cô Hoàng Mai">
                     </div>
                 </div>
+
+                <div class="kho-tai-lieu-container" id="khoTaiLieuContainer">
+                    <div class="search-filter-bar">
+                        <div class="search-box-custom">
+                            <i class="fa-solid fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Tìm kiếm tên tài liệu hoặc mô tả...">
+                        </div>
+                        <div class="filter-box-custom">
+                            <label for="categoryFilter"><i class="fa-solid fa-filter"></i> Lọc danh mục:</label>
+                            <select id="categoryFilter">
+                                <option value="all">-- Tất cả mục tài liệu --</option>
+                                <option value="Tin học lớp 3">Tin học lớp 3</option>
+                                <option value="Tin học lớp 4">Tin học lớp 4</option>
+                                <option value="Tin học lớp 5">Tin học lớp 5</option>
+                                <option value="Giáo án">Giáo án</option>
+                                <option value="Đề kiểm tra">Đề kiểm tra</option>
+                                <option value="Tài liệu AI">Tài liệu AI</option>
+                                <option value="Tài liệu tập huấn">Tài liệu tập huấn</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="documents-grid-custom" id="documentsGrid">
+                        <div class="status-text-custom">Đang tải học liệu hệ thống...</div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
 
     <script>
-        // Giữ nguyên vẹn toàn bộ dữ liệu chữ nghĩa chuyển đổi động của cô
+        // Giữ nguyên vẹn cơ sở dữ liệu bài viết tĩnh của cô
         const data = {
             trangchu: {
                 mainTitle: "CHÀO MỪNG QUÝ THẦY CÔ VÀ CÁC EM HỌC SINH",
@@ -319,16 +505,119 @@
             }
         };
 
-        function changeContent(key) {
-            document.getElementById('content-main-title').innerText = data[key].mainTitle;
-            document.getElementById('teacher-name').innerText = data[key].name;
-            document.getElementById('teacher-role').innerText = data[key].role;
-            document.getElementById('page-text').innerText = data[key].text;
-            document.getElementById('main-image').src = data[key].image;
+        let DATA_JSON_DOCUMENTS = []; // Biến chứa dữ liệu tải từ JSON
 
+        function changeContent(key) {
+            // Thay đổi tiêu đề
+            document.getElementById('content-main-title').innerText = data[key].mainTitle;
+            
+            // Xử lý ẩn/hiện bộ lọc tài liệu tự động khi chọn tab Giáo án hoặc Tài nguyên
+            const infoBox = document.getElementById('info-box-wrapper');
+            const khoTaiLieu = document.getElementById('khoTaiLieuContainer');
+            const selectFilter = document.getElementById('categoryFilter');
+
+            if (key === 'giaoan' || key === 'tailieu') {
+                infoBox.style.display = 'none';
+                khoTaiLieu.style.display = 'block';
+                
+                // Đặt mặc định bộ lọc nhanh khớp với tab đang đứng
+                if (key === 'giaoan') {
+                    selectFilter.value = 'Giáo án';
+                } else {
+                    selectFilter.value = 'all'; // Tự do tìm tất cả đề cương, tài liệu lớp
+                }
+                filterDocuments();
+            } else {
+                // Hiện lại khối giới thiệu bình thường
+                infoBox.style.display = 'grid';
+                khoTaiLieu.style.display = 'none';
+                
+                document.getElementById('teacher-name').innerText = data[key].name;
+                document.getElementById('teacher-role').innerText = data[key].role;
+                document.getElementById('page-text').innerText = data[key].text;
+                document.getElementById('main-image').src = data[key].image;
+            }
+
+            // Đổi trạng thái nút kích hoạt trên menu ngang
             document.querySelectorAll('.nav-list a').forEach(el => el.classList.remove('active'));
             const activeBtn = document.getElementById(`btn-${key}`);
             if(activeBtn) activeBtn.classList.add('active');
+        }
+
+        // --- XỬ LÝ ĐỌC FILE JSON VÀ TÌM KIẾM BỘ LỌC TÀI LIỆU ---
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchJsonData();
+            document.getElementById('searchInput').addEventListener('input', filterDocuments);
+            document.getElementById('categoryFilter').addEventListener('change', filterDocuments);
+        });
+
+        async function fetchJsonData() {
+            try {
+                const response = await fetch('data/tailieu.json');
+                if (!response.ok) throw new Error('Không thể đọc file JSON');
+                DATA_JSON_DOCUMENTS = await response.json();
+                filterDocuments();
+            } catch (error) {
+                console.error(error);
+                document.getElementById('documentsGrid').innerHTML = `
+                    <div class="status-text-custom">Chưa có tệp dữ liệu /data/tailieu.json hoặc cấu trúc trống.</div>
+                `;
+            }
+        }
+
+        function renderDocuments(docs) {
+            const grid = document.getElementById('documentsGrid');
+            grid.innerHTML = '';
+
+            if (docs.length === 0) {
+                grid.innerHTML = '<div class="status-text-custom">Không tìm thấy tài liệu phù hợp.</div>';
+                return;
+            }
+
+            docs.forEach(doc => {
+                const dateObj = new Date(doc.ngayCapNhat);
+                const formattedDate = isNaN(dateObj) ? doc.ngayCapNhat : dateObj.toLocaleDateString('vi-VN');
+
+                const card = document.createElement('div');
+                card.className = 'doc-card-custom';
+                card.innerHTML = `
+                    <span class="doc-tag-custom">${doc.monHoc}</span>
+                    <h4 class="doc-title-custom">${doc.ten}</h4>
+                    <p class="doc-desc-custom">${doc.moTa}</p>
+                    <div class="doc-date-custom"><i class="far fa-calendar-alt"></i> Cập nhật: ${formattedDate}</div>
+                    <div class="doc-actions-custom">
+                        <a href="${doc.urlXem}" target="_blank" class="btn-custom btn-view-custom"><i class="fas fa-eye"></i> Xem liền</a>
+                        <a href="${doc.urlTai}" download class="btn-custom btn-download-custom"><i class="fas fa-download"></i> Tải về</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterDocuments() {
+            const keyword = removeVietnameseTones(document.getElementById('searchInput').value.toLowerCase().trim());
+            const selectedCategory = document.getElementById('categoryFilter').value;
+
+            const filtered = DATA_JSON_DOCUMENTS.filter(doc => {
+                const matchesCategory = (selectedCategory === 'all' || doc.monHoc === selectedCategory);
+                const cleanName = removeVietnameseTones(doc.ten.toLowerCase());
+                const cleanDesc = removeVietnameseTones(doc.moTa.toLowerCase());
+                const matchesKeyword = cleanName.includes(keyword) || cleanDesc.includes(keyword);
+                return matchesCategory && matchesKeyword;
+            });
+
+            renderDocuments(filtered);
+        }
+
+        function removeVietnameseTones(str) {
+            str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a");
+            str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e");
+            str = str.replace(/ì|í|ị|ỉ|ĩ/g,"i");
+            str = str.replace(/ò|á|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o");
+            str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u");
+            str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y");
+            str = str.replace(/đ/g,"d");
+            return str;
         }
     </script>
 </body>
